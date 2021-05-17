@@ -14,14 +14,64 @@
         <h1>DreamSquid</h1>
         <p>un générateur de description aléatoire, pour dessiner à partir d'un texte !</p>
     </header>
-        <div id="theme"> theme: pokémon </div>
-        <div id="maBestiole"></div>
-        <div class="deType"> de type</div>
-        <div id="monType"></div>
-        <input id="random" type="button" value="un autre !">
+        <div id="generatorGeneral">
+            <div id="themeGeneral">
+                <p>choix du theme</p> 
+                <div id="theme">
+                    <div id="pokeTheme"><h2>pokémon</h2></div> 
+                    <div id="rpgTheme"><h2>JDR créator</h2></div>
+                </div>
+            </div>
+
+            <div id="pokeGen">
+                <div id="maBestiole"></div>
+                <div class="deType"> de type</div>
+                <div id="monType"></div>
+            </div>
+
+            <div id="rpgGen">
+                <div id="placeName">
+                    <h3>nom du personnage</h3>
+                    <input type="text" id='rpgName'placeholder="ex: bob" pattern="[A-Za-z' -]+">
+                </div>
+                <div id="alertDescription"></div>
+                <div id="description">pas de nom, pas de description ! :p</div>
+                <div id="titleStat">statistiques</div>
+                <ul>
+                    <li>
+                        <p>force</p> 
+                        <div id="fo">0</div>
+                    </li>
+                    <li>
+                        <p>dexterité</p> 
+                        <div id="dex">0</div>
+                    </li>
+                    <li>
+                        <p>constitution</p> 
+                        <div id="co">0</div>
+                    </li>
+                    <li>
+                        <p>intelligence</p> 
+                        <div id="int">0</div>
+                    </li>
+                    <li>
+                        <p>sagesse</p> 
+                        <div id="sag">0</div>
+                    </li>
+                    <li>
+                        <p>charisme</p> 
+                        <div id="cha">0</div>
+                    </li>
+                </ul>
+            </div>
+            <input id="random" type="button" value="un autre !">
+        </div>
+        
     </div>
     <footer> <p> bricolé à l'arache un jeudi aprèm par Rackham Le Dev, parce qu'il se faisait chier. </p>
     </footer>
-    <script src="calcul.js"></script>
+    <script src="calculator/gestion-calculator.js"></script>
+    <script src="calculator/poke-calcul.js"></script>
+    <script src="calculator/rpg-calcul.js"></script>
 </body>
 </html>

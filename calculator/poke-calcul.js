@@ -1,15 +1,13 @@
 let monType = document.getElementById('monType');
 let maBestiole = document.getElementById('maBestiole');
 let quality = document.getElementById('quality');
-let button = document.getElementById('random');
 let poketype = ["normale","Feu","combat","eau","vol","plante","Poison","Electrik","sol","Psy","Roche","glace","insecte","Dragon","spectre","ténèbre","acier","Fée"];
-let  bestioleList = ["un dinosaure","un kangourou", "un elementaire", "un genre de singe", "un guerrier", "une espèce de serpent", "un gros lézard", "un fauve", "un bovin", "un oiseau", "un poisson", "un truc bricolé par l'homme", "un rongeur", "un molusque"];
-let qualityList = ["avec des gros bras", "avec un seule oeil", "un peu musical sur les bords", "mais concrètement, c'est genre de la bouffe", "avec des cornes ou des pics partout", "trop mignon", "mais il est un peu zarb", " mais en fait c'est un dieu", "qui fait de la magie", "avec un gros visage", "en version gros balèze", "mais c'est un genre d'esprit", "mais il est un peu flippant", "mais il est un peu moche"];
+let  bestioleList = ["un dinosaure","un kangourou", "un elementaire", "un singe", "un guerrier", "un serpent", "un lézard", "un fauve", "un bovin", "un oiseau", "un poisson", "un objet", "un rongeur", "un molusque"];
+let qualityList = ["avec des gros bras", "avec qu'un seul oeil", "qui aime la musique", "avec un attribut culinaire", "avec des cornes ou des pics partout", "trop mignon", "divin", "qui fait de la magie", "avec un gros visage", "en version gros balèze", "spectral", "un peu flippant", "un peu moche"];
 
-calculator();
-button.onclick = calculator;
+pokeCalcul();
 
-function calculator(){
+function pokeCalcul(){
     let pokeAleatoire1 = Math.floor(Math.random() * poketype.length);
     let pokeAleatoire2 = Math.floor(Math.random() * poketype.length);
     let qualityAleatoire = Math.floor(Math.random() * qualityList.length);
@@ -24,7 +22,7 @@ function calculator(){
         function bonuschimery(){
             bestioleAleatoireBonus = Math.floor(Math.random() * bestioleList.length);
             if(bestioleAleatoireBonus !== bestioleAleatoire){
-                maBestiole.innerHTML = "un mix entre " + bestioleList[bestioleAleatoire] + " et " + bestioleList[bestioleAleatoireBonus] + ", " + qualityList[qualityAleatoire];
+                maBestiole.innerHTML = "un mix entre " + bestioleList[bestioleAleatoire] + " et " + bestioleList[bestioleAleatoireBonus] + " " + qualityList[qualityAleatoire];
             }else if(bestioleAleatoireBonus == bestioleAleatoire){
                 bonuschimery();
             }
@@ -32,7 +30,6 @@ function calculator(){
     }else{
         maBestiole.innerHTML= bestioleList[bestioleAleatoire] + " " + qualityList[qualityAleatoire];
     }
-
 
     //le type
     if( numberType == 1){

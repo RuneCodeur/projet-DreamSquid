@@ -1,12 +1,5 @@
 concept : proposer un endroit où poster des oeuvres réalisé avec le randomizer
 
-titre
-	pakitara
-	kalimari (kalamar)
-	ikanoe (calamar qui dessine)
-	takonoe (poulpe qui dessine)
-	dreamsquid
-
 générateur theme
 theme1 pokemon
 	animal de base
@@ -28,16 +21,29 @@ theme2 une personne
 	accessoire
 	
 
-theme3 perso rpg
+theme3 perso rpg (version +18)
+	stat
+	compétence
+	alignement
 	sexe
 	visage
+	coiffure
+	couleur des cheveux
+	couleurs et forme des yeux
+	signe distinctif
+	gabarit
 	equipement
 	race
+	profession
+	defaut visuel
+	defaut comportemental
 	age
 	story
 	
 theme4 chimère animale
 theme5 scène spectaculaire
+theme6 description literaire
+theme7 mix and twist
 
 page du randomizer //le randomizer
 page défi random //bonus avec une description personalisé et temporalisé

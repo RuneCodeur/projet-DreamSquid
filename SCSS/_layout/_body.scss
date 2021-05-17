@@ -1,0 +1,158 @@
+
+    .bkgd-ajust{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #generatorGeneral{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            #themeGeneral{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 3px black solid;
+                width: 100%;
+                margin: 0 0 25px 0;
+                p{
+                text-decoration: underline;
+                margin: 0;
+                }
+                #theme{
+                    display: flex;
+                    margin: 10px 0 0 0;
+                    div{
+                        margin: 0 10px;
+                        padding: 0;
+                        border-left: 3px black solid;
+                        border-top: 3px black solid;
+                        border-right: 3px black solid;
+                        background-color: #780aac;
+                        border-radius: 10px 10px 0 0;
+                        color: white;
+                        width: 130px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        h2{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            #pokeGen{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                #maBestiole{
+                    background-color: #2468b1;
+                    border-radius: 50px 50px 10px 10px;
+                    border: 5px black solid;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fccf00;
+                    padding: 0 20px 0 20px;
+                    width: 70%;
+                    max-width: 800px;
+                    min-height: 80px;
+                }
+                .deType{
+                    border-left: 5px black solid;
+                    border-right: 5px black solid;
+                    background-color: white;
+                    width: 120px;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                }
+                #monType{
+                    background-color: #2468b1;
+                    border-radius: 10px 10px 50px 50px;
+                    border: 5px black solid;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    color: #fccf00;
+                    height: 80px;
+                    width: 50%;
+                    max-width: 600px;
+                    padding: 0 20px;
+                    margin: 0 0 40px 0;
+                }
+            }
+            #rpgGen{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                width: 100%;
+                h3{
+                    font-size: 25px;
+                    margin: 0;
+                }
+                input{
+                    display: flex;
+                    text-align: center;
+                    margin: 0 ;
+                }
+                #alertDescription{
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    color: red;
+                    height: 50px;
+                }
+                #description{
+                    border: 5px black solid;
+                    background-color: #2468b1;
+                    color: #fccf00;
+                    padding: 10px 20px;
+                    border-radius: 30px 30px 5px 5px;
+                    max-width: 70%;
+                }
+                #titleStat{
+                    margin: 15px 0 0 0;
+                }
+                ul{
+                    background-color: #194370;
+                    border: 5px black solid;
+                    border-radius: 5px 5px 30px 30px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    padding: 5px;
+                    margin: 0 0 20px 0;
+                    justify-content: center;
+                    align-items: center;
+                    li{
+                        background-color: #2468b1;
+                        color: #fccf00;
+                        border-radius: 10px ;
+                        font-weight: bolder;
+                        width: 130px;
+                        padding: 0;
+                        margin: 7px;
+                        p{
+                            margin: 5px;
+                        }
+                        div{
+                            margin: 5px;
+                            }
+                    }
+                }
+            }
+        }
+    }

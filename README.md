@@ -1,5 +1,12 @@
 concept : proposer un endroit où poster des oeuvres réalisé avec le randomizer
 
+couleurs :
+	violet : a846a0
+	bleu foncé : 2a628f
+	bleu clair : 3e92cc
+	vert : 37ff8b
+	jaune : f9dc5c
+	
 générateur theme
 theme1 pokemon
 	animal de base

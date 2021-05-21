@@ -1,26 +1,30 @@
-* { font-size: 20px; font-family: 'Playfair Display', serif; font-weight: bolder; }
+* { font-size: 20px; font-family: 'Playfair Display', serif; color: white; font-weight: bolder; }
 
-body { width: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; margin: 0; }
+body { background-color: #123045; width: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; margin: 0; }
 
-header { display: flex; flex-direction: column; }
+header { width: 100%; box-sizing: border-box; border: 10px black solid; background-image: url("././ressource/background-dreamsquid.jpg"); background-position: center; background-size: cover; }
 
-header img { height: 190px; margin: 20px 0 0 0; }
+header .bkgd-header { display: flex; flex-direction: column; background-color: rgba(255, 255, 255, 0.7); }
 
-header h1 { font-family: 'Texturina', serif; display: flex; align-items: center; justify-content: center; color: #780aac; margin: 0; font-size: 50px; }
+header .bkgd-header img { height: 250px; margin: 20px 0 0 0; }
 
-header p { color: #000000; text-align: center; font-size: 25px; margin: 0 40px 30px 40px; }
+header .bkgd-header h1 { font-family: 'Texturina', serif; display: flex; align-items: center; justify-content: center; color: #a846a0; margin: 0; font-size: 50px; text-shadow: 4px -2px 0px black; }
 
-footer { margin: 50px 0 0 0; }
+header .bkgd-header p { color: #000000; text-align: center; font-size: 25px; margin: 0 40px 30px 40px; }
 
-footer p { font-weight: normal; font-size: 18px; text-align: center; margin: 60px 100px 40px 100px; }
+footer { padding: 50px 0 75px 0; }
+
+footer p { font-weight: normal; font-size: 18px; text-align: center; margin: 0; width: auto; padding: 0px 50px 0 50px; }
+
+footer div { word-wrap: break-word; font-weight: normal; display: flex; justify-content: center; text-align: center; margin: 0; width: auto; text-decoration: underline; }
 
 #random:active { box-shadow: inset 5px 5px 10px black; }
 
-#random { background-color: #780aac; border-radius: 1500px; box-shadow: 5px 5px 10px black; height: 120px; width: 120px; border: 3px black solid; font-weight: bolder; display: flex; justify-content: center; color: white; padding: 20px; outline: 0; }
+#random { background-color: #a846a0; border-radius: 1500px; box-shadow: 5px 5px 10px black; height: 120px; width: 120px; border: 3px black solid; font-weight: bolder; display: flex; justify-content: center; color: white; padding: 20px; outline: 0; }
 
 .bkgd-ajust { display: flex; flex-direction: column; justify-content: center; align-items: center; }
 
-.bkgd-ajust #generatorGeneral { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 90%; }
+.bkgd-ajust #generatorGeneral { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 80%; padding: 40px 10% 0 10%; }
 
 .bkgd-ajust #generatorGeneral #themeGeneral { display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 3px black solid; width: 100%; margin: 0 0 25px 0; }
 
@@ -28,33 +32,33 @@ footer p { font-weight: normal; font-size: 18px; text-align: center; margin: 60p
 
 .bkgd-ajust #generatorGeneral #themeGeneral #theme { display: flex; margin: 10px 0 0 0; }
 
-.bkgd-ajust #generatorGeneral #themeGeneral #theme div { margin: 0 10px; padding: 0; border-left: 3px black solid; border-top: 3px black solid; border-right: 3px black solid; background-color: #780aac; border-radius: 10px 10px 0 0; color: white; width: 130px; height: 40px; display: flex; justify-content: center; align-items: center; }
+.bkgd-ajust #generatorGeneral #themeGeneral #theme div { margin: 0 10px; padding: 0; border-left: 3px black solid; border-top: 3px black solid; border-right: 3px black solid; background-color: #a846a0; border-radius: 10px 10px 0 0; color: white; width: 130px; height: 40px; display: flex; justify-content: center; align-items: center; }
 
 .bkgd-ajust #generatorGeneral #themeGeneral #theme div h2 { margin: 0; }
 
 .bkgd-ajust #generatorGeneral #pokeGen { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; }
 
-.bkgd-ajust #generatorGeneral #pokeGen #maBestiole { background-color: #2468b1; border-radius: 50px 50px 10px 10px; border: 5px black solid; display: flex; text-align: center; justify-content: center; align-items: center; color: #fccf00; padding: 0 20px 0 20px; width: 70%; max-width: 800px; min-height: 80px; }
+.bkgd-ajust #generatorGeneral #pokeGen #maBestiole { background-color: #3e92cc; border-radius: 50px 50px 10px 10px; border: 5px black solid; display: flex; text-align: center; justify-content: center; align-items: center; color: #f9dc5c; padding: 0 20px 0 20px; width: 70%; max-width: 800px; min-height: 80px; }
 
-.bkgd-ajust #generatorGeneral #pokeGen .deType { border-left: 5px black solid; border-right: 5px black solid; background-color: white; width: 120px; display: flex; text-align: center; justify-content: center; }
+.bkgd-ajust #generatorGeneral #pokeGen .deType { border-left: 5px black solid; border-right: 5px black solid; background-color: white; background-color: #225b82; width: 120px; display: flex; text-align: center; justify-content: center; }
 
-.bkgd-ajust #generatorGeneral #pokeGen #monType { background-color: #2468b1; border-radius: 10px 10px 50px 50px; border: 5px black solid; display: flex; justify-content: center; text-align: center; align-items: center; color: #fccf00; height: 80px; width: 50%; max-width: 600px; padding: 0 20px; margin: 0 0 40px 0; }
+.bkgd-ajust #generatorGeneral #pokeGen #monType { background-color: #3e92cc; border-radius: 10px 10px 50px 50px; border: 5px black solid; display: flex; justify-content: center; text-align: center; align-items: center; color: #f9dc5c; height: 80px; width: 50%; max-width: 600px; padding: 0 20px; margin: 0 0 40px 0; }
 
 .bkgd-ajust #generatorGeneral #rpgGen { display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center; width: 100%; }
 
 .bkgd-ajust #generatorGeneral #rpgGen h3 { font-size: 25px; margin: 0; }
 
-.bkgd-ajust #generatorGeneral #rpgGen input { display: flex; text-align: center; margin: 0; }
+.bkgd-ajust #generatorGeneral #rpgGen input { display: flex; text-align: center; color: black; margin: 0; }
 
 .bkgd-ajust #generatorGeneral #rpgGen #alertDescription { display: flex; justify-content: center; text-align: center; align-items: center; color: red; height: 50px; }
 
-.bkgd-ajust #generatorGeneral #rpgGen #description { border: 5px black solid; background-color: #2468b1; color: #fccf00; padding: 10px 20px; border-radius: 30px 30px 5px 5px; max-width: 70%; }
+.bkgd-ajust #generatorGeneral #rpgGen #description { border: 5px black solid; background-color: #3e92cc; color: #f9dc5c; padding: 10px 20px; border-radius: 30px 30px 5px 5px; max-width: 70%; }
 
 .bkgd-ajust #generatorGeneral #rpgGen #titleStat { margin: 15px 0 0 0; }
 
-.bkgd-ajust #generatorGeneral #rpgGen ul { background-color: #194370; border: 5px black solid; border-radius: 5px 5px 30px 30px; display: flex; flex-direction: row; flex-wrap: wrap; list-style: none; padding: 5px; margin: 0 0 20px 0; justify-content: center; align-items: center; }
+.bkgd-ajust #generatorGeneral #rpgGen ul { background-color: #225b82; border: 5px black solid; min-width: 300px; border-radius: 5px 5px 30px 30px; display: flex; flex-direction: row; flex-wrap: wrap; list-style: none; padding: 5px; margin: 0 0 20px 0; justify-content: center; align-items: center; }
 
-.bkgd-ajust #generatorGeneral #rpgGen ul li { background-color: #2468b1; color: #fccf00; border-radius: 10px; font-weight: bolder; width: 130px; padding: 0; margin: 7px; }
+.bkgd-ajust #generatorGeneral #rpgGen ul li { background-color: #3e92cc; color: #f9dc5c; border-radius: 10px; font-weight: bolder; min-width: 130px; padding: 0; margin: 7px; }
 
 .bkgd-ajust #generatorGeneral #rpgGen ul li p { margin: 5px; }
 

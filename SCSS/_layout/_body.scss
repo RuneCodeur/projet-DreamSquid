@@ -9,7 +9,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 90%;
+            width: 80%;
+            padding: 40px 10% 0 10% ;
             #themeGeneral{
                 display: flex;
                 flex-direction: column;
@@ -31,7 +32,7 @@
                         border-left: 3px black solid;
                         border-top: 3px black solid;
                         border-right: 3px black solid;
-                        background-color: #780aac;
+                        background-color: $colorPrimary;
                         border-radius: 10px 10px 0 0;
                         color: white;
                         width: 130px;
@@ -52,14 +53,14 @@
                 align-items: center;
                 width: 100%;
                 #maBestiole{
-                    background-color: #2468b1;
+                    background-color: $colortertiary;
                     border-radius: 50px 50px 10px 10px;
                     border: 5px black solid;
                     display: flex;
                     text-align: center;
                     justify-content: center;
                     align-items: center;
-                    color: #fccf00;
+                    color: $colorSecundary;
                     padding: 0 20px 0 20px;
                     width: 70%;
                     max-width: 800px;
@@ -69,20 +70,21 @@
                     border-left: 5px black solid;
                     border-right: 5px black solid;
                     background-color: white;
+                    background-color: darken($colortertiary, $amount: 20%);
                     width: 120px;
                     display: flex;
                     text-align: center;
                     justify-content: center;
                 }
                 #monType{
-                    background-color: #2468b1;
+                    background-color: $colortertiary;
                     border-radius: 10px 10px 50px 50px;
                     border: 5px black solid;
                     display: flex;
                     justify-content: center;
                     text-align: center;
                     align-items: center;
-                    color: #fccf00;
+                    color: $colorSecundary;
                     height: 80px;
                     width: 50%;
                     max-width: 600px;
@@ -104,6 +106,7 @@
                 input{
                     display: flex;
                     text-align: center;
+                    color: black;
                     margin: 0 ;
                 }
                 #alertDescription{
@@ -111,13 +114,13 @@
                     justify-content: center;
                     text-align: center;
                     align-items: center;
-                    color: red;
+                    color: rgb(255, 0, 0);
                     height: 50px;
                 }
                 #description{
                     border: 5px black solid;
-                    background-color: #2468b1;
-                    color: #fccf00;
+                    background-color: $colortertiary;
+                    color: $colorSecundary;
                     padding: 10px 20px;
                     border-radius: 30px 30px 5px 5px;
                     max-width: 70%;
@@ -126,8 +129,9 @@
                     margin: 15px 0 0 0;
                 }
                 ul{
-                    background-color: #194370;
+                    background-color: darken($colortertiary, $amount: 20%);;
                     border: 5px black solid;
+                    min-width: 300px;
                     border-radius: 5px 5px 30px 30px;
                     display: flex;
                     flex-direction: row;
@@ -138,11 +142,11 @@
                     justify-content: center;
                     align-items: center;
                     li{
-                        background-color: #2468b1;
-                        color: #fccf00;
+                        background-color: $colortertiary;
+                        color: $colorSecundary;
                         border-radius: 10px ;
                         font-weight: bolder;
-                        width: 130px;
+                        min-width: 130px;
                         padding: 0;
                         margin: 7px;
                         p{

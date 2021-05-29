@@ -1,11 +1,8 @@
 concept : proposer un endroit où poster des oeuvres réalisé avec le randomizer
 
 couleurs :
-	violet : a846a0
-	bleu foncé : 2a628f
-	bleu clair : 3e92cc
-	vert : 37ff8b
-	jaune : f9dc5c
+violet vers le bleu
+
 	
 générateur theme
 theme1 pokemon
@@ -29,7 +26,6 @@ theme2 une personne
 	
 
 theme3 perso rpg (version +18)
-	stat
 	compétence
 	alignement
 	sexe
@@ -47,6 +43,8 @@ theme3 perso rpg (version +18)
 	age
 	story
 	
+imagine: un HUMAIN GUERRIER de 19 ans qui maitrise LA MAGIE DU FEU. il porte UNE ARMURE avec UN SAC et UNE CAPE, et il est équipé DUNE HACHE DE GUERRE. il est TR7S GRAND, avec BEAUCOUP DE MUSCLE. il a un visage CARR2E et une CICATRICE. ses yeux sont VERT et EN AMMANDE. il PORTE UNE CR7TE VERTE avec UNE MOUSTACHE. il est UN PEU BOURRU, mais il est TR7S DOU2 AVEC LES FILLES.
+
 theme4 chimère animale
 theme5 scène spectaculaire
 theme6 description literaire

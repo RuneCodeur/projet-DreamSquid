@@ -54,9 +54,10 @@
                 width: 100%;
                 #maBestiole{
                     background-color: $colortertiary;
-                    border-radius: 50px 50px 10px 10px;
+                    border-radius: 30px 30px 10px 10px;
                     border: 5px black solid;
                     display: flex;
+                    font-size: 23px;
                     text-align: center;
                     justify-content: center;
                     align-items: center;
@@ -77,8 +78,9 @@
                     justify-content: center;
                 }
                 #monType{
+                    font-size: 23px;
                     background-color: $colortertiary;
-                    border-radius: 10px 10px 50px 50px;
+                    border-radius: 10px 10px 30px 30px;
                     border: 5px black solid;
                     display: flex;
                     justify-content: center;
@@ -99,40 +101,51 @@
                 text-align: center;
                 align-items: center;
                 width: 100%;
-                h3{
-                    font-size: 25px;
-                    margin: 0;
-                }
-                input{
-                    display: flex;
-                    text-align: center;
-                    color: black;
-                    margin: 0 ;
-                }
-                #alertDescription{
-                    display: flex;
-                    justify-content: center;
-                    text-align: center;
-                    align-items: center;
-                    color: rgb(255, 0, 0);
-                    height: 50px;
-                }
                 #description{
-                    border: 5px black solid;
                     background-color: $colortertiary;
-                    color: $colorSecundary;
-                    padding: 10px 20px;
-                    border-radius: 30px 30px 5px 5px;
-                    max-width: 70%;
+                    border-radius: 30px 30px 10px 10px;
+                    border: 5px black solid;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 20px 0 20px;
+                    width: 70%;
+                    max-width: 800px;
+                    min-height: 80px;
+                    div{
+                        font-size: 20px;
+                        color: $colorSecundary;
+                        display: flex;
+                        text-align: center;
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
-                #titleStat{
+                #titleStat, #titleAlign{
                     margin: 15px 0 0 0;
                 }
-                ul{
-                    background-color: darken($colortertiary, $amount: 20%);;
+                #align{
+                    background-color:$colortertiary;
                     border: 5px black solid;
                     min-width: 300px;
-                    border-radius: 5px 5px 30px 30px;
+                    border-radius: 10px 10px 10px 10px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    padding: 5px;
+                    margin: 0 0 20px 0;
+                    justify-content: center;
+                    align-items: center;
+                    color: $colorSecundary;
+                }
+                ul{
+                    background-color: darken($colortertiary, $amount: 20%);
+                    border: 5px black solid;
+                    min-width: 300px;
+                    border-radius: 10px 10px 30px 30px;
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
@@ -153,6 +166,8 @@
                             margin: 5px;
                         }
                         div{
+                            color: $colorSecundary;
+                            font-size: 25px;
                             margin: 5px;
                             }
                     }

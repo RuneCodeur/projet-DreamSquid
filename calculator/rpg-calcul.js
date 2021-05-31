@@ -33,7 +33,7 @@ let formEyes = ["en amande", "espacés", "ronds"];
 let colorHairM = ["châtain", "blond", "roux", "brun"];
 let colorHairF = ["châtain", "blonde", "rousse", "brune"];
 let hair = ["un chignon", "un mohawk", "des cheveux en bataille", "des couettes", "une queue de cheval", "des cheveux courts", "de long cheveux", "la coupe affro"];
-let beard = ["pas de barbe ni de moustache", "une barbe collier", "la moustache", "le bouc", "des rouflaquettes", "une barbe tressé", "une très longue barbe", "une barbe bien fournis", "une barbe épaise", "une barbe de 3 jours"];
+let beard = ["pas de barbe ni de moustache", "une barbe collier", "la moustache", "une moustache bien fourni","une petite moustache", "le bouc", "des rouflaquettes", "une barbe tressé", "une très longue barbe", "une barbe bien fournis", "une barbe épaise", "une barbe de 3 jours"];
 let comportment = ["qui a les mains baladeuses", "qui a la critique facile","qui n'est pas très doué avec les autres", "qui se fait facilement detester par les autres", " qui a des problèmes avec ses parents", "un peu flemmarde","qui a beaucoup de préjugés"," qui ne sais pas lire","très tactile", "sait reconnaitre la valeur des choses"];
 let emotion = ["un peu simplet","un peu colèrique"," un peu bourru", "tout le temps en train de sourire", " tout le temps stoïc"];
 
@@ -50,14 +50,13 @@ function rpgCalcul(){
     let randomArmor = Math.floor(Math.random() * armor.length);
     let randomAtiral = Math.floor(Math.random() * atirail.length);
     let randomWeapon = Math.floor(Math.random() * weapon.length);
-    let randomMuscle = Math.floor(Math.random() * muscle.length);
-    let randomFace = Math.floor(Math.random() * face.length);
-    let randomDistinct = Math.floor(Math.random() * distinct.length);
-    let randomColorEyes = Math.floor(Math.random() * colorEyes.length);
-    let randomformEyes = Math.floor(Math.random() * formEyes.length);
-    let randomHair = Math.floor(Math.random() * hair.length);
-    let randomComportment = Math.floor(Math.random() * comportment.length);
-    let randomEmotion = Math.floor(Math.random() * emotion.length);
+
+    let loveMusic = Math.floor(Math.random() *5);
+    let masterRandomClas = Math.floor(Math.random() *19);
+    let masterRandomCorp = Math.floor(Math.random() *19);
+    let masterRandomFace = Math.floor(Math.random() *19);
+    let masterRandompoil = Math.floor(Math.random() *19);
+    let masterRandomComp = Math.floor(Math.random() *19);
 
     let randomalign = Math.floor(Math.random() * alignementList.length);
     let randomFo = Math.floor(Math.random() * 7);
@@ -67,62 +66,115 @@ function rpgCalcul(){
     let randomSag = Math.floor(Math.random() * 7);
     let randomCha = Math.floor(Math.random() * 7);
 
+    //////    remis à zero du génerateur    //////
+    descriGen.style.margin = "0px 0px";
+    descriEquip.style.margin = "0px 0px";
+    descriCorps.style.margin = "0px 0px";
+    descriFace.style.margin ="0px 0px";
+    descriPoils.style.margin ="0px 0px";
+    descriCompo.style.margin ="0px 0px";
+    descriGen.innerHTML = "";
+    descriEquip.innerHTML = "";
+    descriCorps.innerHTML = "";
+    descriFace.innerHTML = "";
+    descriPoils.innerHTML = "";
+    descriCompo.innerHTML = "";
+
     //////    description femme    //////
     if(randomSex == 0){
-        descriGen.style.margin = "10px 0px";
-        descriGen.innerHTML = "Imagine : <br> Une "+ classeF[randomClassF] + ' ' + raceF[randomRaceF] + " de " + randomAge + " ans qui maitrise " + maitrise[randomMaitrise] + " !";
+        if (masterRandomClas == 0){
+            descriGen.style.margin = "10px 0px";
+            descriGen.innerHTML = "Imagine : <br> Une " + raceF[randomRaceF] + " de " + randomAge + " ans qui maitrise " + maitrise[randomMaitrise] + " !";
+        }
+        if (masterRandomClas > 0){
+            descriGen.style.margin = "10px 0px";
+            descriGen.innerHTML = "Imagine : <br> Une "+ classeF[randomClassF] + ' ' + raceF[randomRaceF] + " de " + randomAge + " ans qui maitrise " + maitrise[randomMaitrise] + " !";
+        }
         
         descriEquip.style.margin = "10px 0px";
         descriEquip.innerHTML = "Elle porte " + armor[randomArmor] + " avec " + atirail[randomAtiral] + ", et elle est équipé " + weapon[randomWeapon] + ".";
+        if(classeF[randomClassF] == 'barde' || classeF[randomClassF ] == 'menestrelle' || loveMusic == 0){
+            let randomMusic = Math.floor(Math.random() * music.length);
+            descriEquip.innerHTML = "Elle porte " + armor[randomArmor] + " avec " + atirail[randomAtiral] + " et " + music[randomMusic] + ", et elle est équipé " + weapon[randomWeapon] + ".";
+        }
        
-        let randomTaille = Math.floor(Math.random() * tailleF.length);
-        let randomBoobs = Math.floor(Math.random() * boobs.length);
-        descriCorps.style.margin = "10px 0px";
-        descriCorps.innerHTML = " Elle est " + tailleF[randomTaille] + " avec " + muscle[randomMuscle]+ " et " + boobs[randomBoobs] + ".";
-        
-        descriFace.style.margin ="10px 0px";
-        descriFace.innerHTML = "Elle a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Ses yeux sont " + colorEyes[randomColorEyes] + " et " + formEyes[randomformEyes] + ".";
-        
-        if (raceF[randomRaceF] != 'femme-lézard'){
-            let randomColorHair = Math.floor(Math.random() * colorHairF.length);
-            descriPoils.style.margin ="10px 0px";
-            descriPoils.innerHTML = "Elle est " + colorHairF[randomColorHair] + " et porte " + hair[randomHair] + ".";
+        if(masterRandomCorp > 0){
+            let randomTaille = Math.floor(Math.random() * tailleF.length);
+            let randomBoobs = Math.floor(Math.random() * boobs.length);
+            let randomMuscle = Math.floor(Math.random() * muscle.length);
+            descriCorps.style.margin = "10px 0px";
+            descriCorps.innerHTML = " Elle est " + tailleF[randomTaille] + " avec " + muscle[randomMuscle]+ " et " + boobs[randomBoobs] + ".";
         }
-        if (raceF[randomRaceF] == 'femme-lézard'){
-            descriPoils.style.margin ="0px 0px";
-            descriPoils.innerHTML = "";
+        if(masterRandomFace > 0){
+            let randomFace = Math.floor(Math.random() * face.length);
+            let randomDistinct = Math.floor(Math.random() * distinct.length);
+            let randomColorEyes = Math.floor(Math.random() * colorEyes.length);
+            let randomformEyes = Math.floor(Math.random() * formEyes.length);
+            descriFace.style.margin ="10px 0px";
+            descriFace.innerHTML = "Elle a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Ses yeux sont " + colorEyes[randomColorEyes] + " et " + formEyes[randomformEyes] + ".";
         }
-
-        descriCompo.style.margin ="10px 0px";
-        descriCompo.innerHTML = "C'est une personne " +comportment[randomComportment] + ", et qui est " + emotion[randomEmotion] + ".";
+        if (masterRandompoil > 0){
+            if (raceF[randomRaceF] != 'femme-lézard'){
+                let randomColorHair = Math.floor(Math.random() * colorHairF.length);
+                let randomHair = Math.floor(Math.random() * hair.length);
+                descriPoils.style.margin ="10px 0px";
+                descriPoils.innerHTML = "Elle est " + colorHairF[randomColorHair] + " et porte " + hair[randomHair] + ".";
+            }
+        }
+        if(masterRandomComp > 0){
+            let randomComportment = Math.floor(Math.random() * comportment.length);
+            let randomEmotion = Math.floor(Math.random() * emotion.length);
+            descriCompo.style.margin ="10px 0px";
+            descriCompo.innerHTML = "C'est une personne " +comportment[randomComportment] + ", et qui est " + emotion[randomEmotion] + ".";
+        }
     
     //////    description homme    //////
-    }else{
-        descriGen.style.margin = "10px 0px";
-        descriGen.innerHTML = "Imagine : <br> Un "+ classeM[randomClassM] +' ' + raceM[randomRaceM] + " de " + randomAge + " ans qui maitrise " + maitrise[randomMaitrise] + " !";
-       
+    }if (randomSex == 1){
+        if(masterRandomClas == 0){
+            descriGen.style.margin = "10px 0px";
+            descriGen.innerHTML = "Imagine : <br> Un " + raceM[randomRaceM] + " de " + randomAge + " ans qui maitrise " + maitrise[randomMaitrise] + " !";
+        }
+        if(masterRandomClas > 0){
+            descriGen.style.margin = "10px 0px";
+            descriGen.innerHTML = "Imagine : <br> Un "+ classeM[randomClassM] +' ' + raceM[randomRaceM] + " de " + randomAge + " ans qui maitrise " + maitrise[randomMaitrise] + " !";
+        }
+
         descriEquip.style.margin = "10px 0px";
         descriEquip.innerHTML = "Il porte " + armor[randomArmor] + " avec " + atirail[randomAtiral] + ", et il est équipé " + weapon[randomWeapon] + ".";
-        
-        let randomTaille = Math.floor(Math.random() * tailleM.length);
-        descriCorps.style.margin = "10px 0px";
-        descriCorps.innerHTML = " Il est " + tailleM[randomTaille] + " avec " + muscle[randomMuscle] + ".";
-        
-        descriFace.style.margin ="10px 0px";
-        descriFace.innerHTML = "Il a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Ses yeux sont " + colorEyes[randomColorEyes] + " et " + formEyes[randomformEyes] + ".";
-        
-        if (raceM[randomRaceM] != 'homme-lézard'){
-            let randomColorHair = Math.floor(Math.random() * colorHairM.length);
-            let randomBeard = Math.floor(Math.random() * beard.length);
-            descriPoils.style.margin ="10px 0px";
-            descriPoils.innerHTML = "Il est " + colorHairM[randomColorHair] + " et porte " + hair[randomHair] + " et " + beard[randomBeard] + ".";
+        if(classeF[randomClassF] == 'barde' || classeF[randomClassF ] == 'menestrel' || loveMusic == 0){
+            let randomMusic = Math.floor(Math.random() * music.length);
+            descriEquip.innerHTML = "Il porte " + armor[randomArmor] + " avec " + atirail[randomAtiral] +" et " + music[randomMusic] + ", et il est équipé " + weapon[randomWeapon] + ".";
         }
-        if (raceM[randomRaceM] == 'homme-lézard'){
-            descriPoils.style.margin ="0px 0px";
-            descriPoils.innerHTML = "";
+
+        if(masterRandomCorp > 0){
+            let randomTaille = Math.floor(Math.random() * tailleM.length);
+            let randomMuscle = Math.floor(Math.random() * muscle.length);
+            descriCorps.style.margin = "10px 0px";
+            descriCorps.innerHTML = " Il est " + tailleM[randomTaille] + " avec " + muscle[randomMuscle] + ".";
         }
-        descriCompo.style.margin ="10px 0px";
-        descriCompo.innerHTML = "C'est une personne " +comportment[randomComportment] + ", et qui est " + emotion[randomEmotion] + ".";
+        if(masterRandomFace > 0){
+            let randomFace = Math.floor(Math.random() * face.length);
+            let randomDistinct = Math.floor(Math.random() * distinct.length);
+            let randomColorEyes = Math.floor(Math.random() * colorEyes.length);
+            let randomformEyes = Math.floor(Math.random() * formEyes.length);
+            descriFace.style.margin ="10px 0px";
+            descriFace.innerHTML = "Il a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Ses yeux sont " + colorEyes[randomColorEyes] + " et " + formEyes[randomformEyes] + ".";
+        }
+        if (masterRandompoil > 0){
+            if (raceM[randomRaceM] != 'homme-lézard'){
+                let randomColorHair = Math.floor(Math.random() * colorHairM.length);
+                let randomHair = Math.floor(Math.random() * hair.length);
+                let randomBeard = Math.floor(Math.random() * beard.length);
+                descriPoils.style.margin ="10px 0px";
+                descriPoils.innerHTML = "Il est " + colorHairM[randomColorHair] + " et porte " + hair[randomHair] + " et " + beard[randomBeard] + ".";
+            }
+        }
+        if(masterRandomComp > 0){
+            let randomComportment = Math.floor(Math.random() * comportment.length);
+            let randomEmotion = Math.floor(Math.random() * emotion.length);
+            descriCompo.style.margin ="10px 0px";
+            descriCompo.innerHTML = "C'est une personne " +comportment[randomComportment] + ", et qui est " + emotion[randomEmotion] + ".";
+        }
     }
 
     //////    bonus femme    //////
@@ -214,61 +266,62 @@ function rpgCalcul(){
         randomCo += 3;
     }
     //////    bonus metier    //////
-    if(classeF[randomClassF] =='barbare'){
-        randomFo += 2;
+    if (masterRandomClas > 0){
+        if(classeF[randomClassF] =='barbare'){
+            randomFo += 2;
+        }
+        if(classeF[randomClassF] =='clerc'){
+            randomSag += 2;
+        }
+        if(classeF[randomClassF] =='paladine'){
+            randomFo += 1;
+            randomSag += 1;
+        }
+        if(classeF[randomClassF] =='voleuse' || classeF[randomClassF] =='assassine'){
+            randomDex += 2;
+        }
+        if(classeF[randomClassF] =='magicienne' || classeF[randomClassF] =='nécromancienne'){
+            randomInt += 2;
+        }
+        if(classeF[randomClassF] =='druide'){
+            randomCo += 2;
+        }
+        if(classeF[randomClassF] =='moniale'){
+            randomSag += 1;
+            randomDex += 1;
+        }
+        if(classeF[randomClassF] =='guerrière'){
+            randomFo += 1;
+            randomCo += 1;
+        }
+        if(classeF[randomClassF] =='pirate'){
+            randomDex += 1;
+            randomCo += 1;
+        }
+        if(classeF[randomClassF] =='rodeuse' || classeF[randomClassF] =='ranger'){
+            randomDex += 1;
+            randomFo += 1;
+        }
+        if(classeF[randomClassF] =='barde' || classeF[randomClassF] =='menestrelle'){
+            randomCha += 2;
+        }
+        if(classeF[randomClassF] =='ingenieuse' || classeF[randomClassF] =='alchimiste'){
+            randomDex += 1;
+            randomInt += 1;
+        }
+        if(classeF[randomClassF] =='mage'){
+            randomSag += 1;
+            randomInt += 1;
+        }
+        if(classeF[randomClassF] =='bourgeoise' || classeF[randomClassF] =='marchande'){
+            randomCha += 1;
+            randomInt += 1;
+        }
+        if(classeF[randomClassF] =='prêtresse'){
+            randomSag += 1;
+            randomCo += 1;
+        }
     }
-    if(classeF[randomClassF] =='clerc'){
-        randomSag += 2;
-    }
-    if(classeF[randomClassF] =='paladine'){
-        randomFo += 1;
-        randomSag += 1;
-    }
-    if(classeF[randomClassF] =='voleuse'||classeF[randomClassF] =='assassine'){
-        randomDex += 2;
-    }
-    if(classeF[randomClassF] =='magicienne'||classeF[randomClassF] =='nécromancienne'){
-        randomInt += 2;
-    }
-    if(classeF[randomClassF] =='druide'){
-        randomCo += 2;
-    }
-    if(classeF[randomClassF] =='moniale'){
-        randomSag += 1;
-        randomDex += 1;
-    }
-    if(classeF[randomClassF] =='guerrière'){
-        randomFo += 1;
-        randomCo += 1;
-    }
-    if(classeF[randomClassF] =='pirate'){
-        randomDex += 1;
-        randomCo += 1;
-    }
-    if(classeF[randomClassF] =='rodeuse'||classeF[randomClassF] =='ranger'){
-        randomDex += 1;
-        randomFo += 1;
-    }
-    if(classeF[randomClassF] =='barde'||classeF[randomClassF] =='menestrelle'){
-        randomCha += 2;
-    }
-    if(classeF[randomClassF] =='ingenieuse'||classeF[randomClassF] =='alchimiste'){
-        randomDex += 1;
-        randomInt += 1;
-    }
-    if(classeF[randomClassF] =='mage'){
-        randomSag += 1;
-        randomInt += 1;
-    }
-    if(classeF[randomClassF] =='bourgeoise'||classeF[randomClassF] =='marchande'){
-        randomCha += 1;
-        randomInt += 1;
-    }
-    if(classeF[randomClassF] =='prêtresse'){
-        randomSag += 1;
-        randomCo += 1;
-    }
-
     //////    bonus homme    //////
 
     }else{
@@ -359,59 +412,61 @@ function rpgCalcul(){
         randomCo += 3;
     }
     //////    bonus metier    //////
-    if(classeF[randomClassF] =='barbare'){
-        randomFo += 2;
-    }
-    if(classeF[randomClassF] =='clerc'){
-        randomSag += 2;
-    }
-    if(classeF[randomClassF] =='paladin'){
-        randomFo += 1;
-        randomSag += 1;
-    }
-    if(classeF[randomClassF] =='voleur'||classeF[randomClassF] =='assassin'){
-        randomDex += 2;
-    }
-    if(classeF[randomClassF] =='magicien'||classeF[randomClassF] =='nécromancien'){
-        randomInt += 2;
-    }
-    if(classeF[randomClassF] =='druide'){
-        randomCo += 2;
-    }
-    if(classeF[randomClassF] =='moine'){
-        randomSag += 1;
-        randomDex += 1;
-    }
-    if(classeF[randomClassF] =='guerrier'){
-        randomFo += 1;
-        randomCo += 1;
-    }
-    if(classeF[randomClassF] =='pirate'){
-        randomDex += 1;
-        randomCo += 1;
-    }
-    if(classeF[randomClassF] =='rodeur'||classeF[randomClassF] =='ranger'){
-        randomDex += 1;
-        randomFo += 1;
-    }
-    if(classeF[randomClassF] =='barde'||classeF[randomClassF] =='menestrel'){
-        randomCha += 2;
-    }
-    if(classeF[randomClassF] =='ingenieur'||classeF[randomClassF] =='alchimiste'){
-        randomDex += 1;
-        randomInt += 1;
-    }
-    if(classeF[randomClassF] =='mage'){
-        randomSag += 1;
-        randomInt += 1;
-    }
-    if(classeF[randomClassF] =='bourgeois'||classeF[randomClassF] =='marchand'){
-        randomCha += 1;
-        randomInt += 1;
-    }
-    if(classeF[randomClassF] =='prêtre'){
-        randomSag += 1;
-        randomCo += 1;
+    if (masterRandomClas > 0){
+        if(classeF[randomClassF] =='barbare'){
+            randomFo += 2;
+        }
+        if(classeF[randomClassF] =='clerc'){
+            randomSag += 2;
+        }
+        if(classeF[randomClassF] =='paladin'){
+            randomFo += 1;
+            randomSag += 1;
+        }
+        if(classeF[randomClassF] =='voleur' || classeF[randomClassF] =='assassin'){
+            randomDex += 2;
+        }
+        if(classeF[randomClassF] =='magicien' || classeF[randomClassF] =='nécromancien'){
+            randomInt += 2;
+        }
+        if(classeF[randomClassF] =='druide'){
+            randomCo += 2;
+        }
+        if(classeF[randomClassF] =='moine'){
+            randomSag += 1;
+            randomDex += 1;
+        }
+        if(classeF[randomClassF] =='guerrier'){
+            randomFo += 1;
+            randomCo += 1;
+        }
+        if(classeF[randomClassF] =='pirate'){
+            randomDex += 1;
+            randomCo += 1;
+        }
+        if(classeF[randomClassF] =='rodeur' || classeF[randomClassF] =='ranger'){
+            randomDex += 1;
+            randomFo += 1;
+        }
+        if(classeF[randomClassF] =='barde' || classeF[randomClassF] =='menestrel'){
+            randomCha += 2;
+        }
+        if(classeF[randomClassF] =='ingenieur' || classeF[randomClassF] =='alchimiste'){
+            randomDex += 1;
+            randomInt += 1;
+        }
+        if(classeF[randomClassF] =='mage'){
+            randomSag += 1;
+            randomInt += 1;
+        }
+        if(classeF[randomClassF] =='bourgeois' || classeF[randomClassF] =='marchand'){
+            randomCha += 1;
+            randomInt += 1;
+        }
+        if(classeF[randomClassF] =='prêtre'){
+            randomSag += 1;
+            randomCo += 1;
+        }
     }
 }
 //////    mechanique de la viellesse    //////

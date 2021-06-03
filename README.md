@@ -2,11 +2,14 @@ concept : proposer un endroit où poster des oeuvres réalisé avec le randomize
 
 0.2.2.0 mis a jour du theme 2
 0.2.3.0 mis en place de variable
-0.2.3.1 ajout/modif mineurs
+0.2.3.1 javascript versionnage
 0.3.0.0 mis en place du theme 3
 0.4.0.0 mis en place du theme 4
 0.5.0.0 integration publique
 	
+
+	integrer les valeurs descriptions dans un fichier config JSON
+	voir la methode class
 theme du générateur
 theme1 pokemon
 theme2 perso rpg

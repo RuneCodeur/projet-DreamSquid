@@ -1,0 +1,48 @@
+#pokeGen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    #maBestiole{
+        background-color: $colortertiary;
+        border-radius: 30px 30px 10px 10px;
+        border: 5px black solid;
+        display: flex;
+        font-size: 23px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: $colorSecundary;
+        padding: 0 20px 0 20px;
+        width: 70%;
+        max-width: 800px;
+        min-height: 80px;
+    }
+    .deType{
+        border-left: 5px black solid;
+        border-right: 5px black solid;
+        background-color: white;
+        background-color: darken($colortertiary, $amount: 20%);
+        width: 120px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    #monType{
+        font-size: 23px;
+        background-color: $colortertiary;
+        border-radius: 10px 10px 30px 30px;
+        border: 5px black solid;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        color: $colorSecundary;
+        height: 80px;
+        width: 50%;
+        max-width: 600px;
+        padding: 0 20px;
+        margin: 0 0 40px 0;
+    }
+}

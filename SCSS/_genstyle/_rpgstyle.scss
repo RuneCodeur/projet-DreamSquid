@@ -1,0 +1,79 @@
+#rpgGen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    #description{
+        background-color: $colortertiary;
+        border-radius: 30px 30px 10px 10px;
+        border: 5px black solid;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px 0 20px;
+        width: 70%;
+        max-width: 800px;
+        min-height: 80px;
+        div{
+            font-size: 20px;
+            color: $colorSecundary;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    #titleStat, #titleAlign{
+        margin: 15px 0 0 0;
+    }
+    #align{
+        background-color:$colortertiary;
+        border: 5px black solid;
+        min-width: 300px;
+        border-radius: 10px 10px 10px 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 5px;
+        margin: 5px 0 20px 0;
+        justify-content: center;
+        align-items: center;
+        color: $colorSecundary;
+    }
+    ul{
+        background-color: darken($colortertiary, $amount: 20%);
+        border: 5px black solid;
+        min-width: 300px;
+        border-radius: 10px 10px 30px 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 5px;
+        margin: 5px 0 20px 0;
+        justify-content: center;
+        align-items: center;
+        li{
+            background-color: $colortertiary;
+            color: $colorSecundary;
+            border-radius: 10px ;
+            font-weight: bolder;
+            min-width: 130px;
+            padding: 0;
+            margin: 7px;
+            p{
+                margin: 5px;
+            }
+            div{
+                color: $colorSecundary;
+                font-size: 25px;
+                margin: 5px;
+            }
+        }
+    }
+}

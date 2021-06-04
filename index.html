@@ -12,7 +12,7 @@
     <div class="bkgd-ajust">
     <header>
         <div class="bkgd-header">
-            <div style="color: black; text-align: center; font-size: 22px;">-- version ALPHA 0.2.4.0 --</div>
+            <div style="color: black; text-align: center; font-size: 22px;">-- version ALPHA 0.2.5.0 --</div>
             <img src="ressource/logo dreamsquid.svg" alt="logo DreamSquid">
             <h1>DreamSquid</h1>
             <p>un générateur de description aléatoire, pour dessiner à partir d'un texte !</p>
@@ -22,20 +22,21 @@
             <div id="themeGeneral">
                 <p>choix du theme</p> 
                 <div id="theme">
-                    <div id="pokeTheme"><h2>pokémon</h2></div> 
-                    <div id="rpgTheme"><h2>JDR créator</h2></div>
+                    <div class="ensemble-carton"><div id="pokeTheme"><h2>Pokémon</h2></div></div> 
+                    <div  class="ensemble-carton"><div id="rpgTheme"><h2>JDR créator</h2></div></div>
+                    <div  class="ensemble-carton"><div id="personaTheme"><h2>Persona</h2></div></div>
                 </div>
             </div>
 
             <div id="pokeGen">
+                <p class="descriptionGen"> Clique sur le bouton, et le générateur te donnera la description d'un nouveau Pokémon completmement unique ! </p>
                 <div id="maBestiole"></div>
                 <div class="deType"> de type</div>
                 <div id="monType"></div>
             </div>
 
             <div id="rpgGen">
-                <div id="placeName">
-                </div>
+                <p class="descriptionGen"> Clique sur le bouton, et le générateur te donnera la description aléatoire d'un personnage de JDR, avec ses propre stats et son alignement !</p>
                 <div id="description">
                     <div id="descri-general"> Clique sur le bouton, si tu veux une description ! </div>
                     <div id="descri-equip"></div>
@@ -74,6 +75,12 @@
                     </li>
                 </ul>
             </div>
+            <div id="personaGen">
+                <p class="descriptionGen">Clique sur le bouton, et le générateur te donnera la description détaillé d'une personne !</p>
+                <div id="descriPersona">
+                    déso, pas encore dispo :)
+                </div>
+            </div>
             <input id="random" type="button" value="un autre !">
         </div>
         
@@ -87,5 +94,6 @@
     <script src="calculator/gestion-calculator.js"></script>
     <script src="calculator/poke-calcul.js"></script>
     <script src="calculator/rpg-calcul.js"></script>
+    <script src="calculator/persona-calcul.js"></script>
 </body>
 </html>

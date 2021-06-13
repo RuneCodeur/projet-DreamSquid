@@ -68,5 +68,7 @@ footer div { word-wrap: break-word; font-weight: normal; display: flex; justify-
 
 #personaGen { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; }
 
-#personaGen #descriPersona { background-color: #3eabcc; border-radius: 30px 30px 10px 10px; border: 5px black solid; display: flex; font-size: 23px; text-align: center; justify-content: center; align-items: center; color: #0400fd; padding: 0 20px 0 20px; width: 70%; max-width: 800px; min-height: 80px; margin: 0 0 20px 0; }
+#personaGen #descriPersona { background-color: #3eabcc; border-radius: 30px 30px 10px 10px; border: 5px black solid; display: flex; font-size: 23px; text-align: center; justify-content: center; flex-direction: column; align-items: center; color: #0400fd; padding: 0 20px 0 20px; width: 70%; max-width: 800px; min-height: 80px; margin: 0 0 20px 0; }
+
+#personaGen #descriPersona div { font-size: 20px; color: #0400fd; display: flex; text-align: center; justify-content: center; align-items: center; }
 /*# sourceMappingURL=style.css.map */

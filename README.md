@@ -1,8 +1,5 @@
 concept : proposer un endroit où poster des oeuvres réalisé avec le randomizer
 
-0.2.2.0 mis a jour du theme 2
-0.2.3.0 mis en place de variable
-0.2.3.1 javascript versionnage
 0.3.0.0 mis en place du theme 3
 0.4.0.0 mis en place du theme 4
 0.5.0.0 integration publique
@@ -13,19 +10,7 @@ concept : proposer un endroit où poster des oeuvres réalisé avec le randomize
 theme du générateur
 theme1 pokemon
 theme2 perso rpg
-
 theme3 une personne
-	forme du visage
-	forme des yeux
-	age
-	forme de la bouche
-	texture de la peau
-	sexe
-	experience de la vie
-	cheveux
-	le nez
-	expression du visage
-	accessoire
 
 theme4 scène spectaculaire
 

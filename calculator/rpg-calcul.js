@@ -26,19 +26,19 @@ let tailleF = ["très grande", "de taille moyenne", "petite"];
 let tailleM = ["très grand", "de taille moyen", "petit"];
 let muscle = ["beaucoup de muscle", "un peu de muscle", "un corps fin", "un peu de ventre", "un corps svelte"];
 let boobs = ["une petite poitrine", "une poitrine avantageuse", "une grosse poitrine", "une absence complète de poitrine"];
-let face = ["carré", "fin", "rond"];
-let distinct = ["une cicatrice", "recouvert de cicatrices", "des tâches de rousseurs", "un piercing à l'oreille", "un piercing au nez", "un piercing aux oreilles", "un piercing aux oreilles et au nez", "un piercing à l'oreille et au nez", "plein de piercing partout", "un long nez", "très basique"];
-let colorEyes = ["vert", "marron", "bleu", "gris", "verron", "jaune", "rouge", "violet" ];
-let formEyes = ["en amande", "espacés", "ronds"];
+let face = ["un visage carré", "un visage fin", "un visage rond", "un visage ovale", "les joues creuses", "un visage crispé", "un visage allongé", "un visage lisse"];
+let distinct = ["une cicatrice", "recouvert de cicatrices", "des tâches de rousseurs", "un piercing à l'oreille", "un piercing au nez", "un piercing aux oreilles", "un piercing aux oreilles et au nez", "un piercing à l'oreille et au nez", "plein de piercing partout", "un long nez", "un gros nez", "un petit nez"];
+let colorEyes = ["vert", "marron", "bleu", "gris", "vairon", "jaune", "rouge", "violet" ];
+let formEyes = ["en amande", "espacés", "de forme rondes", "menaçant", "perçant", "bridés", "rapprochés"];
 let cachEye = ["cache-oeil", "bandeau"];
 let MultiCachEye = ["un double cache-oeil", "un bandeau", "un masque", "un demi-masque"];
 let Direction = ["gauche", "droit"];
 let colorHairM = ["châtain", "blond", "roux", "brun"];
 let colorHairF = ["châtain", "blonde", "rousse", "brune"];
-let hair = ["un chignon", "un mohawk", "des cheveux en bataille", "des couettes", "une queue de cheval", "des cheveux courts", "des cheveux frisés", "de long cheveux", "de long cheveux ondulés", "de long cheveux frisés", "la coupe affro", "une grande tresse", "des tresses", "plusieurs petites tresses"];
+let hair = ["un chignon", "un mohawk", "des cheveux en bataille", "une queue de cheval", "des cheveux courts", "des cheveux frisés", "de long cheveux", "de long cheveux ondulés", "de long cheveux frisés", "la coupe affro"];
 let beard = ["pas de barbe ni de moustache", "une barbe collier", "la moustache", "une moustache bien fourni","une petite moustache", "le bouc", "des rouflaquettes", "une barbe tressé", "une très longue barbe", "une barbe bien fournis", "une barbe épaise", "une barbe de 3 jours"];
 let comportment = ["qui a les mains baladeuses", "qui a la critique facile","qui n'est pas très doué avec les autres", "qui se fait facilement detester par les autres", " qui a des problèmes avec ses parents", "un peu flemmarde","qui a beaucoup de préjugés"," qui ne sais pas lire","très tactile", "qui sait reconnaitre la valeur des choses"];
-let emotion = ["un peu simplet","un peu colèrique"," un peu bourru", "tout le temps en train de sourire", " tout le temps stoïc"];
+let emotion = ["un peu simplet","un peu colèrique"," un peu bourru", "tout le temps en train de sourire", " tout le temps stoïque"];
 
 let alignementList = ["loyal bon", "neutre bon", "chaotique bon", " loyal neutre", "neutre", "chaotique neutre", "loyal mauvais", "neutre mauvais", "chaotique mauvais"];
 
@@ -120,22 +120,22 @@ function rpgCalcul(){
             //sans yeux
             if(randomeye === 0){
                 let randomMultiCachEye = Math.floor(Math.random() * MultiCachEye.length);
-                descriFace.innerHTML = "Elle a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Elle a ses yeux complètement recouvert par " + MultiCachEye[randomMultiCachEye] + ".";
+                descriFace.innerHTML = "Elle a " + face[randomFace] + " et " + distinct[randomDistinct] + ". Elle a ses yeux complètement recouvert par " + MultiCachEye[randomMultiCachEye] + ".";
             //manque 1 oeil
             }else if(randomeye === 1){
                 let randomDirection = Math.floor(Math.random() * Direction.length);
                 let randomCachEye = Math.floor(Math.random() * cachEye.length);
                 let randomColorEyes = Math.floor(Math.random() * colorEyes.length);
-                if(colorEyes[randomColorEyes] === 'verron'){
-                    descriFace.innerHTML = "Elle a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Son oeil " + Direction[randomDirection] + " est marron, tandis que son autre oeil est recouvert d'un " + cachEye[randomCachEye] + ".";
+                if(colorEyes[randomColorEyes] === 'vairon'){
+                    descriFace.innerHTML = "Elle a " + face[randomFace] + " et " + distinct[randomDistinct] + ". Son oeil " + Direction[randomDirection] + " est marron, tandis que son autre oeil est recouvert d'un " + cachEye[randomCachEye] + ".";
                 }else{
-                    descriFace.innerHTML = "Elle a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Son oeil " + Direction[randomDirection] + " est " + colorEyes[randomColorEyes] + ", tandis que son autre oeil est recouvert d'un " + cachEye[randomCachEye] + ".";
+                    descriFace.innerHTML = "Elle a " + face[randomFace] + " et " + distinct[randomDistinct] + ". Son oeil " + Direction[randomDirection] + " est " + colorEyes[randomColorEyes] + ", tandis que son autre oeil est recouvert d'un " + cachEye[randomCachEye] + ".";
                 }
             //tout les yeux
             }else if(randomeye >= 2){
                 let randomColorEyes = Math.floor(Math.random() * colorEyes.length);
                 let randomformEyes = Math.floor(Math.random() * formEyes.length);
-                descriFace.innerHTML = "Elle a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Ses yeux sont " + colorEyes[randomColorEyes] + " et " + formEyes[randomformEyes] + ".";
+                descriFace.innerHTML = "Elle a " + face[randomFace] + " et " + distinct[randomDistinct] + ". Ses yeux sont " + colorEyes[randomColorEyes] + " et " + formEyes[randomformEyes] + ".";
             }
         }
         //description cheveux
@@ -197,22 +197,22 @@ function rpgCalcul(){
             if(randomeye === 0){
                 //sans yeux
                 let randomMultiCachEye = Math.floor(Math.random() * MultiCachEye.length);
-                descriFace.innerHTML = "Il a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Il a ses yeux complètement recouvert par " + MultiCachEye[randomMultiCachEye] + ".";
+                descriFace.innerHTML = "Il a " + face[randomFace] + " et " + distinct[randomDistinct] + ". Il a ses yeux complètement recouvert par " + MultiCachEye[randomMultiCachEye] + ".";
             }else if(randomeye === 1){
                 //manque 1 oeil
                 let randomDirection = Math.floor(Math.random() * Direction.length);
                 let randomCachEye = Math.floor(Math.random() * cachEye.length);
                 let randomColorEyes = Math.floor(Math.random() * colorEyes.length);
                 if(colorEyes[randomColorEyes] === 'verron'){
-                    descriFace.innerHTML = "Il a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Son oeil " + Direction[randomDirection] + " est marron, tandis que son autre oeil est recouvert d'un " + cachEye[randomCachEye] + ".";
+                    descriFace.innerHTML = "Il a " + face[randomFace] + " et " + distinct[randomDistinct] + ". Son oeil " + Direction[randomDirection] + " est marron, tandis que son autre oeil est recouvert d'un " + cachEye[randomCachEye] + ".";
                 }else{
-                    descriFace.innerHTML = "Il a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Son oeil " + Direction[randomDirection] + " est " + colorEyes[randomColorEyes] + ", tandis que son autre oeil est recouvert d'un " + cachEye[randomCachEye] + ".";
+                    descriFace.innerHTML = "Il a " + face[randomFace] + " et " + distinct[randomDistinct] + ". Son oeil " + Direction[randomDirection] + " est " + colorEyes[randomColorEyes] + ", tandis que son autre oeil est recouvert d'un " + cachEye[randomCachEye] + ".";
                 }
             }else if(randomeye >= 2){
                 //tout les yeux
                 let randomColorEyes = Math.floor(Math.random() * colorEyes.length);
                 let randomformEyes = Math.floor(Math.random() * formEyes.length);
-                descriFace.innerHTML = "Il a un visage " + face[randomFace] + " et " + distinct[randomDistinct] + ". Ses yeux sont " + colorEyes[randomColorEyes] + " et " + formEyes[randomformEyes] + ".";
+                descriFace.innerHTML = "Il a " + face[randomFace] + " et " + distinct[randomDistinct] + ". Ses yeux sont " + colorEyes[randomColorEyes] + " et " + formEyes[randomformEyes] + ".";
             }
         }
         //description des cheveux et barbe
@@ -560,7 +560,7 @@ if (randomAge >= 60 && randomAge < 75){
 }
 if (randomAge >= 75){
     randomCo -= 4;
-    randomFo -= 1;
+    randomFo -= 2;
 }
 
 //////    ecriture des stats    //////

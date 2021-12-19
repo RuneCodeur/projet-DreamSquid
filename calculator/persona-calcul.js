@@ -136,6 +136,7 @@ function personaCalcul(){
         let randomNameM = Math.floor(Math.random() *nameM.length);
         let randomColorskinM = Math.floor(Math.random() *colorskinM.length);
         let randomQualityM = Math.floor(Math.random() *qualityM.length);
+        descriGENEperso.style.margin = "10px 0px";
         descriGENEperso.innerHTML = "Voici " + nameM[randomNameM] + ". <br> C'est un homme " + colorskinM[randomColorskinM] + ", " + age[randomAge] + " et " + qualityM[randomQualityM] + ".";
         
         if (masterRandomHair > 0){

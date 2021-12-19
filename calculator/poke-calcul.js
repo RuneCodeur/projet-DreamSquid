@@ -22,13 +22,13 @@ function pokeCalcul(){
         function bonuschimery(){
             bestioleAleatoireBonus = Math.floor(Math.random() * bestioleList.length);
             if(bestioleAleatoireBonus !== bestioleAleatoire){
-                maBestiole.innerHTML = "un mix entre " + bestioleList[bestioleAleatoire] + " et " + bestioleList[bestioleAleatoireBonus] + " " + qualityList[qualityAleatoire];
+                maBestiole.innerHTML = "un mix entre " + bestioleList[bestioleAleatoire] + " et " + bestioleList[bestioleAleatoireBonus] + " " + qualityList[qualityAleatoire] + ".";
             }else if(bestioleAleatoireBonus == bestioleAleatoire){
                 bonuschimery();
             }
         }
     }else{
-        maBestiole.innerHTML= bestioleList[bestioleAleatoire] + " " + qualityList[qualityAleatoire];
+        maBestiole.innerHTML= bestioleList[bestioleAleatoire] + " " + qualityList[qualityAleatoire] + ".";
     }
 
     //le type

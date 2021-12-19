@@ -1,20 +1,15 @@
 concept : proposer un endroit où poster des oeuvres réalisé avec le randomizer
 
-0.3.0.0 mis en place du theme 3
 0.4.0.0 mis en place du theme 4
-0.5.0.0 integration publique
-	
+0.5.0.0 conversion vers vue.js
+1.0 integration publique
+1.2 ajout d'un discord
+2.0 integration d'une api
 
 	integrer les valeurs descriptions dans un fichier config JSON
 	voir la methode class
-theme du générateur
-theme1 pokemon
-theme2 perso rpg
-theme3 une personne
 
-theme4 scène spectaculaire
-
-theme5 chimère animale
+theme5 scène spectaculaire
 theme6 description literaire
 theme7 mix and twist
 

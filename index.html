@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -12,7 +12,7 @@
     <div class="bkgd-ajust">
     <header>
         <div class="bkgd-header">
-            <div style="color: black; text-align: center; font-size: 22px;">-- version ALPHA 0.3.0.0 --</div>
+            <div style="color: black; text-align: center; font-size: 22px;">-- version ALPHA 0.4.0.0 --</div>
             <img src="ressource/logo dreamsquid.svg" alt="logo DreamSquid">
             <h1>DreamSquid</h1>
             <p>un générateur de description aléatoire, pour dessiner à partir d'un texte !</p>
@@ -25,6 +25,7 @@
                     <div class="ensemble-carton"><div id="pokeTheme"><h2>Pokémon</h2></div></div> 
                     <div class="ensemble-carton"><div id="rpgTheme"><h2>JDR créator</h2></div></div>
                     <div class="ensemble-carton"><div id="personaTheme"><h2>Persona</h2></div></div>
+                    <div class="ensemble-carton"><div id="chimeraTheme"><h2>chimera</h2></div></div>
                 </div>
             </div>
 
@@ -87,6 +88,20 @@
                    <div id="descri-gene-bonus"></div>
                 </div>
             </div>
+            <div id="chimeraGen">
+                <p class="descriptionGen">Clique sur le bouton, et le générateur te donnera la description d'une créature imaginaire !</p>
+                <div id="descriChimera">
+                    <div id="descri-chimera-gen">Clique sur le bouton, si tu veux une description !</div>
+                    <div id="descri-chimera-form"></div>
+                    <div id="descri-chimera-size"></div>
+                    <div id="descri-chimera-skin"></div>
+                    <div id="descri-chimera-head"></div>
+                    <div id="descri-chimera-bonus"></div>
+                    <div id="descri-chimera-paws"></div>
+                    <div id="descri-chimera-paws-extra"></div>
+                    <div id="descri-chimera-tail"></div>
+                </div>
+            </div>
             <input id="random" type="button" value="un autre !">
         </div>
         
@@ -101,5 +116,6 @@
     <script src="calculator/poke-calcul.js"></script>
     <script src="calculator/rpg-calcul.js"></script>
     <script src="calculator/persona-calcul.js"></script>
+    <script src="calculator/chimera-calcul.js"></script>
 </body>
 </html>

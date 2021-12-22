@@ -51,8 +51,10 @@ function chimeraCalcul(){
 	let randomJaw = Math.floor(Math.random() *jaw.length);
 	let randomSizeJaw = Math.floor(Math.random() *sizeJaw.length);
 	let randomBonus = Math.floor(Math.random() *4);
+	let ifbonus = Math.floor(Math.random() *3);
+	let iftail = Math.floor(Math.random() *2);
+	let finalbonus = '';
 
-	
     descriPaws.style.margin = "0px 0px";
 	descriPaws.innerHTML ='';
     descriPawsExtra.style.margin = "0px 0px";
@@ -60,7 +62,7 @@ function chimeraCalcul(){
     descriTail.style.margin = "0px 0px";
 	descriTail.innerHTML = '';
 
-	/*mixage genetique */
+	//mixage genetique générale
 	descriGeneral.style.margin = "10px 0px";
 	descriGeneral.innerHTML = "Voici une créature qui sort " + origin[randomOrigin] + ".";
 	if(randomMix == 0){
@@ -79,7 +81,7 @@ function chimeraCalcul(){
 		descriForm.innerHTML = "Il ressemble à un mélange entre un " + form[randomform1] + " et un " + form[randomform2] + ".";
 	}
 
-	/*la taille*/
+	//la taille
 	if (randomSizeDirection == 0 || form[randomform1] === 'serpent'){
 		descriSize.style.margin = "10px 0px";
 		descriSize.innerHTML = "il mesure aproximativemment " + size[randomSize] + " de long."
@@ -89,8 +91,8 @@ function chimeraCalcul(){
 		descriSize.innerHTML = "il mesure aproximativemment " + size[randomSize] + " de haut."
 	}
 
-	/*la peau*/
-	if(randomskin == skin.length){
+	//la peau
+	if(randomskin == skin.length+1){
 		if(colorskin[randomColorskin1] == 'arc-en-ciel'){
 			descriSkin.style.margin = "10px 0px";
 			descriSkin.innerHTML = "Sa peau est de couleur arc-en-ciel.";
@@ -157,6 +159,7 @@ function chimeraCalcul(){
 			}
 		}
 	}
+	// si il a une peau particulière
 	if(randomskin < skin.length){
 		if(colorskin[randomColorskin1] == 'arc-en-ciel'){
 			descriSkin.style.margin = "10px 0px";
@@ -224,7 +227,9 @@ function chimeraCalcul(){
 			}
 		}
 	}
-	//la tete
+
+	//les yeux et la bouche 
+	//si il n'a pas d'yeux
 	if (randomNumEye == 0 ){
 		if(jaw[randomJaw].includes("bec")){
 			descriHead.style.margin = "10px 0px";
@@ -233,8 +238,9 @@ function chimeraCalcul(){
 			descriHead.style.margin = "10px 0px";
 			descriHead.innerHTML = "il n'a pas d'yeux, mais il a une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 		}
-	}
-	if (randomNumEye == 1){
+
+	//si il a un seul oeil
+	}else if (randomNumEye == 1){
 		let randomSizeEye = Math.floor(Math.random() *sizeEye.length+1);
 		if(randomSizeEye == sizeEye.length){
 			if(jaw[randomJaw].includes("bec")){
@@ -253,8 +259,9 @@ function chimeraCalcul(){
 				descriHead.innerHTML = "il a un " + sizeEye[randomSizeEye] + " oeil et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}
 		}
-	}
-	if (randomNumEye > 1){
+
+	//si il a plusieurs yeux
+	}else if (randomNumEye > 1){
 		let randomMulitSizeEye = Math.floor(Math.random() *multiSizeEye.length+1);
 		if (randomMulitSizeEye == multiSizeEye.length ){
 			if(jaw[randomJaw].includes("bec")){
@@ -277,7 +284,9 @@ function chimeraCalcul(){
 	}
 
 	//bonus sur la tete
-	if(randomBonus == 0) { //rien du tout
+
+	//rien du tout
+	if(randomBonus == 0) { 
 		let tentacleYN = Math.floor(Math.random() *2);
 		if (tentacleYN == 1){
 			let randomTentacle = Math.floor(Math.random() *tentacle.length);
@@ -285,7 +294,9 @@ function chimeraCalcul(){
 			descriBonus.innerHTML = "il a aussi " + tentacle[randomTentacle] + " sur la tête.";
 		}
 	}
-	if(randomBonus == 1) { //oreilles
+
+	//oreilles
+	if(randomBonus == 1) { 
 		let randomEars = Math.floor(Math.random() *ears.length);
 
 		let iftentacle = ""
@@ -298,7 +309,8 @@ function chimeraCalcul(){
 		descriBonus.innerHTML ="il a aussi des " + ears[randomEars] + iftentacle + " sur la tête.";
 	}
 
-	if(randomBonus == 2) { // cornes
+	// cornes
+	if(randomBonus == 2) { 
 		let ifHorn = "";
 		let randomHorn = Math.floor(Math.random() *horn.length)+1;
 		if (randomHorn < horn.length){
@@ -313,19 +325,18 @@ function chimeraCalcul(){
 		if (randomHorn == horn.length){
 			ifHorn = "des bois";
 		}
-
 		let iftentacle = "";
 		let tentacleYN = Math.floor(Math.random() *2);
 		if (tentacleYN == 1){
 			let randomTentacle = Math.floor(Math.random() *tentacle.length);
 			iftentacle = " et " + tentacle[randomTentacle];
 		}
-
 		descriBonus.style.margin = "10px 0px";
 		descriBonus.innerHTML ="il a aussi " + ifHorn + iftentacle + " sur la tête.";
 	}
 
-	if(randomBonus == 3) { // oreilles et cornes
+	// oreilles et cornes
+	if(randomBonus == 3) { 
 		let randomEars = Math.floor(Math.random() *ears.length);
 		
 		let ifHorn = "";
@@ -364,29 +375,46 @@ function chimeraCalcul(){
 		let randomPaws = Math.floor(Math.random() *10);
 		let numberPaws = 0;
 		let extraRacePaws = "";
+		//si c'est insecte, mais qu'il n'a pas de pattes, il a plein de pattes
 		if(randomPaws == 0 && (form[randomform1] !== 'insect' || form[randomform2] !== 'insect')){
-			numberPaws = 1;
+			numberPaws = 'beaucoup de';
+		
+		//calcul des nombres de pattes 
 		}else{
-			if(form[randomform1] == 'insect'){
-				let randomInsectPaws = Math.floor(Math.random() *3);
-				if(randomInsectPaws == 0){
-					numberPaws = 'beaucoup de';
-				}
-			}else{
-				if(randomPaws == 1){
+			switch(randomPaws){
+				case 1:
+					console.log(randomPaws)
 					numberPaws = 2;
-				}else if(randomPaws == 2){
+					break;
+
+				case 2:
+					console.log(randomPaws)
 					numberPaws = 3;
-				}else if(randomPaws > 2 && randomPaws < 7){
+					break;
+
+				case 3:
+				case 4: 
+				case 5: 
+				case 6:
+					console.log(randomPaws)
 					numberPaws = 4;
-				}else if(randomPaws == 7 || randomPaws == 8){
+					break;
+
+				case 7: 
+				case 8:
+					console.log(randomPaws)
 					numberPaws = 6;
-				}else{
+					break;
+
+				default:
+					console.log(randomPaws)
 					numberPaws = 8;
-				}
+					break;
+
 			}
 		}
 
+		//si c'est un insecte, rajoute des ailes
 		if(form[randomform1] == 'insect' || form[randomform2] == 'insect'){
 			let randomInsectWings = Math.floor(Math.random() *3);
 			if(randomInsectWings == 0){
@@ -395,6 +423,7 @@ function chimeraCalcul(){
 				extraRacePaws = "plusieurs paires d'ailes et ";
 			}
 		}
+		//si c'est un oiseau, rajoute des ailes
 		if(form[randomform1] == 'oiseau' || form[randomform2] == 'oiseau'){
 			let randomBirdWings = Math.floor(Math.random() *3);
 			if(extraRacePaws == ""){
@@ -405,6 +434,7 @@ function chimeraCalcul(){
 				extraRacePaws = "3 paires d'ailes  et ";
 			}
 		}
+		// si c'est un poisson, rajoute des nageoires
 		if(form[randomform1] == 'poisson' || form[randomform2] == 'poisson'){
 			if(extraRacePaws == ""){
 				let randomFishFin = Math.floor(Math.random() *3);
@@ -461,11 +491,11 @@ function chimeraCalcul(){
 					descriPaws.style.margin = "10px 0px";
 					descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " tentacules" +  texture + bonustentacle + ".";
 				}
+
 				//si il y a un mix des tentacules
 				if(numberPaws >= 3){
 					let ifmixed = Math.floor(Math.random() *2);
-					if(ifmixed === 1){
-						
+					if(ifmixed === 1){	
 						let oneormoretentacle = Math.floor(Math.random() *2);
 						if(oneormoretentacle === 0){
 							let randomextrabonustentacle = 0
@@ -552,7 +582,6 @@ function chimeraCalcul(){
 							}
 						}
 
-
 					//si il y a une variété des pattes
 					}else{
 						let numberextrafinger = 0
@@ -575,15 +604,14 @@ function chimeraCalcul(){
 						}
 
 						//les pattes secondaires
-						function extraFinger (){
-							numberextrafinger = Math.floor(Math.random() *5);
-							randomstyleextrafinger = Math.floor(Math.random() * stylefinger.length)
-							if(numberextrafinger === numberfinger && randomstyleextrafinger === randomstylefinger){
-								extraFinger();
-							}
-						}
 						if(ifspecialpaws === 0){
-
+							function extraFinger (){
+								numberextrafinger = Math.floor(Math.random() *5);
+								randomstyleextrafinger = Math.floor(Math.random() * stylefinger.length)
+								if(numberextrafinger === numberfinger && randomstyleextrafinger === randomstylefinger){
+									extraFinger();
+								}
+							}
 							extraFinger()
 							if(numberextrafinger !== numberfinger && randomstyleextrafinger !== randomstylefinger){
 								descriPawsExtra.style.margin = "10px 0px";
@@ -609,10 +637,7 @@ function chimeraCalcul(){
 		}
 	}
 
-	let ifbonus = Math.floor(Math.random() *3);
-	let finalbonus = '';
-
-	let iftail = Math.floor(Math.random() *2);
+	//si il y a une queue
 	if(iftail === 0 || form[randomform1] === 'serpent' || form[randomform2] === 'serpent'){
 		let randomtail = Math.floor(Math.random() *tail.length);
 
@@ -628,7 +653,6 @@ function chimeraCalcul(){
 				finalbonus = bonus[randombonus] + ' et ' + bonus2[randomextrabonus]
 			}
 		}
-
 		if(ifbonus === 0){
 			descriTail.style.margin = "10px 0px";
 			descriTail.innerHTML = 'il a une queue' + tail[randomtail] + '.';
@@ -637,6 +661,7 @@ function chimeraCalcul(){
 			descriTail.innerHTML = 'il a une queue' + tail[randomtail] + ' ainsi ' + finalbonus + '.';
 		}
 
+	//pas de queue
 	}else{
 		if(ifbonus === 1){
 			let randombonus =  Math.floor(Math.random() * bonus2.length);
@@ -650,7 +675,6 @@ function chimeraCalcul(){
 				finalbonus = bonus2[randombonus] + ' et ' + bonus2[randomextrabonus]
 			}
 		}
-
 		if(ifbonus !== 0){
 			descriTail.style.margin = "10px 0px";
 			descriTail.innerHTML = 'il n\'a pas de queue, mais il a ' + finalbonus + '.';

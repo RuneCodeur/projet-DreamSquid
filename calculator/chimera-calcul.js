@@ -84,11 +84,11 @@ function chimeraCalcul(){
 	//la taille
 	if (randomSizeDirection == 0 || form[randomform1] === 'serpent'){
 		descriSize.style.margin = "10px 0px";
-		descriSize.innerHTML = "il mesure aproximativemment " + size[randomSize] + " de long."
+		descriSize.innerHTML = "Il mesure aproximativemment " + size[randomSize] + " de long."
 	}
 	else if (randomSizeDirection == 1){
 		descriSize.style.margin = "10px 0px";
-		descriSize.innerHTML = "il mesure aproximativemment " + size[randomSize] + " de haut."
+		descriSize.innerHTML = "Il mesure aproximativemment " + size[randomSize] + " de haut."
 	}
 
 	//la peau
@@ -233,10 +233,10 @@ function chimeraCalcul(){
 	if (randomNumEye == 0 ){
 		if(jaw[randomJaw].includes("bec")){
 			descriHead.style.margin = "10px 0px";
-			descriHead.innerHTML = "il n'a pas d'yeux, mais il a un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+			descriHead.innerHTML = "Il n'a pas d'yeux, mais il a un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 		}else{
 			descriHead.style.margin = "10px 0px";
-			descriHead.innerHTML = "il n'a pas d'yeux, mais il a une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+			descriHead.innerHTML = "Il n'a pas d'yeux, mais il a une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 		}
 
 	//si il a un seul oeil
@@ -245,18 +245,18 @@ function chimeraCalcul(){
 		if(randomSizeEye == sizeEye.length){
 			if(jaw[randomJaw].includes("bec")){
 				descriHead.style.margin = "10px 0px";
-				descriHead.innerHTML = "il a un oeil gigantesque et un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+				descriHead.innerHTML = "Il a un oeil gigantesque et un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}else{
 				descriHead.style.margin = "10px 0px";
-				descriHead.innerHTML = "il a un oeil gigantesque et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+				descriHead.innerHTML = "Il a un oeil gigantesque et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}
 		}else{
 			if(jaw[randomJaw].includes("bec")){
 				descriHead.style.margin = "10px 0px";
-				descriHead.innerHTML = "il a un " + sizeEye[randomSizeEye] + " oeil et un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+				descriHead.innerHTML = "Il a un " + sizeEye[randomSizeEye] + " oeil et un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}else{
 				descriHead.style.margin = "10px 0px";
-				descriHead.innerHTML = "il a un " + sizeEye[randomSizeEye] + " oeil et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+				descriHead.innerHTML = "Il a un " + sizeEye[randomSizeEye] + " oeil et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}
 		}
 
@@ -266,19 +266,18 @@ function chimeraCalcul(){
 		if (randomMulitSizeEye == multiSizeEye.length ){
 			if(jaw[randomJaw].includes("bec")){
 				descriHead.style.margin = "10px 0px";
-				descriHead.innerHTML = "il a " + numberEye[randomNumEye] + " yeux gigantesques et un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+				descriHead.innerHTML = "Il a " + numberEye[randomNumEye] + " yeux gigantesques et un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}else{
 				descriHead.style.margin = "10px 0px";
-				descriHead.innerHTML = "il a " + numberEye[randomNumEye] + " yeux gigantesques et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+				descriHead.innerHTML = "Il a " + numberEye[randomNumEye] + " yeux gigantesques et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}
 		}else{
 			if(jaw[randomJaw].includes("bec")){
 				descriHead.style.margin = "10px 0px";
-				descriHead.innerHTML = "il a " + numberEye[randomNumEye] + " " + multiSizeEye[randomMulitSizeEye] + " yeux et un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
-
+				descriHead.innerHTML = "Il a " + numberEye[randomNumEye] + " " + multiSizeEye[randomMulitSizeEye] + " yeux et un " + sizeBeak[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}else{
 				descriHead.style.margin = "10px 0px";
-				descriHead.innerHTML = "il a " + numberEye[randomNumEye] + " " + multiSizeEye[randomMulitSizeEye] + " yeux et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
+				descriHead.innerHTML = "Il a " + numberEye[randomNumEye] + " " + multiSizeEye[randomMulitSizeEye] + " yeux et une " + sizeJaw[randomSizeJaw] + " " + jaw[randomJaw] + ".";
 			}
 		}
 	}
@@ -291,7 +290,7 @@ function chimeraCalcul(){
 		if (tentacleYN == 1){
 			let randomTentacle = Math.floor(Math.random() *tentacle.length);
 			descriBonus.style.margin = "10px 0px";
-			descriBonus.innerHTML = "il a aussi " + tentacle[randomTentacle] + " sur la tête.";
+			descriBonus.innerHTML = "Il a aussi " + tentacle[randomTentacle] + " sur la tête.";
 		}
 	}
 
@@ -306,7 +305,7 @@ function chimeraCalcul(){
 			iftentacle = " et " + tentacle[randomTentacle]
 		}
 		descriBonus.style.margin = "10px 0px";
-		descriBonus.innerHTML ="il a aussi des " + ears[randomEars] + iftentacle + " sur la tête.";
+		descriBonus.innerHTML ="Il a aussi des " + ears[randomEars] + iftentacle + " sur la tête.";
 	}
 
 	// cornes
@@ -332,7 +331,7 @@ function chimeraCalcul(){
 			iftentacle = " et " + tentacle[randomTentacle];
 		}
 		descriBonus.style.margin = "10px 0px";
-		descriBonus.innerHTML ="il a aussi " + ifHorn + iftentacle + " sur la tête.";
+		descriBonus.innerHTML ="Il a aussi " + ifHorn + iftentacle + " sur la tête.";
 	}
 
 	// oreilles et cornes
@@ -361,7 +360,7 @@ function chimeraCalcul(){
 			iftentacle = " et " + tentacle[randomTentacle];
 		}
 		descriBonus.style.margin = "10px 0px";
-		descriBonus.innerHTML = "il a aussi des " + ears[randomEars] + ", ainsi " + ifHorn + iftentacle + " sur la tête.";
+		descriBonus.innerHTML = "Il a aussi des " + ears[randomEars] + ", ainsi " + ifHorn + iftentacle + " sur la tête.";
 	}
 
 	//les molusques ont-ils des pattes ?
@@ -383,12 +382,10 @@ function chimeraCalcul(){
 		}else{
 			switch(randomPaws){
 				case 1:
-					console.log(randomPaws)
 					numberPaws = 2;
 					break;
 
 				case 2:
-					console.log(randomPaws)
 					numberPaws = 3;
 					break;
 
@@ -396,18 +393,15 @@ function chimeraCalcul(){
 				case 4: 
 				case 5: 
 				case 6:
-					console.log(randomPaws)
 					numberPaws = 4;
 					break;
 
 				case 7: 
 				case 8:
-					console.log(randomPaws)
 					numberPaws = 6;
 					break;
 
 				default:
-					console.log(randomPaws)
 					numberPaws = 8;
 					break;
 
@@ -485,11 +479,11 @@ function chimeraCalcul(){
 				//si il y a une seule tentacule
 				if(numberPaws == 1){
 					descriPaws.style.margin = "10px 0px";
-					descriPaws.innerHTML = "il possède " + extraRacePaws + "une seule " + pawLength[randomPawlength] + " tentacule" + texture + bonustentacle + ".";
+					descriPaws.innerHTML = "Il possède " + extraRacePaws + "une seule " + pawLength[randomPawlength] + " tentacule" + texture + bonustentacle + ".";
 				//si il y a plusieurs tentacules
 				}else{
 					descriPaws.style.margin = "10px 0px";
-					descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " tentacules" +  texture + bonustentacle + ".";
+					descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " tentacules" +  texture + bonustentacle + ".";
 				}
 
 				//si il y a un mix des tentacules
@@ -508,7 +502,7 @@ function chimeraCalcul(){
 							}
 							extrabonustentacle()
 							descriPawsExtra.style.margin = "10px 0px";
-							descriPawsExtra.innerHTML = 'l\'une d\'entre elles possède ' + extratentacle[randomextrabonustentacle] + '.';
+							descriPawsExtra.innerHTML = 'L\'une d\'entre elles possède ' + extratentacle[randomextrabonustentacle] + '.';
 						}else{
 							let randomextrabonustentacles = 0
 							
@@ -520,7 +514,7 @@ function chimeraCalcul(){
 							}
 							extrabonustentacles()
 							descriPawsExtra.style.margin = "10px 0px";
-							descriPawsExtra.innerHTML = 'mais certaines d\'entre elles possèdent ' + extratentacles[randomextrabonustentacles] + '.';
+							descriPawsExtra.innerHTML = 'Mais certaines d\'entre elles possèdent ' + extratentacles[randomextrabonustentacles] + '.';
 						}
 					}
 				}
@@ -534,7 +528,7 @@ function chimeraCalcul(){
 				if(numberPaws == 1){
 					let randomStylePaw = Math.floor(Math.random() *stylePaw.length);
 					descriPaws.style.margin = "10px 0px";
-					descriPaws.innerHTML = "il possède " + extraRacePaws + "une seule " + pawLength[randomPawlength] + " patte" + stylePaw[randomStylePaw] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+					descriPaws.innerHTML = "Il possède " + extraRacePaws + "une seule " + pawLength[randomPawlength] + " patte" + stylePaw[randomStylePaw] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 
 				//si il a plus d'une patte
 				}else{
@@ -553,32 +547,32 @@ function chimeraCalcul(){
 						if(ifspecialpaws === 0){
 							if(mixpaws === 0){
 								descriPaws.style.margin = "10px 0px";
-								descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes" + stylePaws[randomStylePaws] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+								descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes" + stylePaws[randomStylePaws] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 							}else if(mixpaws === 1){
 								descriPaws.style.margin = "10px 0px";
-								descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes avec " + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+								descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes avec " + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 							}else if (mixpaws === 2){
 								descriPaws.style.margin = "10px 0px";
-								descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + " pattes" + stylePaws[randomStylePaws] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+								descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + " pattes" + stylePaws[randomStylePaws] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 							}else{
 								descriPaws.style.margin = "10px 0px";
-								descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + " pattes avec " + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+								descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + " pattes avec " + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 							}
 						//si c'est des pattes spéciales
 						}else{
 							let randomalterpaws = Math.floor(Math.random() *alterpaws.length);
 							if(mixpaws === 0){
 								descriPaws.style.margin = "10px 0px";
-								descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes " + stylePaws[randomStylePaws] + ' en forme de ' + alterpaws[randomalterpaws] + ".";
+								descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes " + stylePaws[randomStylePaws] + ' en forme de ' + alterpaws[randomalterpaws] + ".";
 							}else if(mixpaws === 1){
 								descriPaws.style.margin = "10px 0px";
-								descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes en forme de " + alterpaws[randomalterpaws] + ".";
+								descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes en forme de " + alterpaws[randomalterpaws] + ".";
 							}else if (mixpaws === 2){
 								descriPaws.style.margin = "10px 0px";
-								descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + " pattes" + stylePaws[randomStylePaws] + ' en forme de ' + alterpaws[randomalterpaws] + ".";
+								descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + " pattes" + stylePaws[randomStylePaws] + ' en forme de ' + alterpaws[randomalterpaws] + ".";
 							}else{
 								descriPaws.style.margin = "10px 0px";
-								descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + " pattes en forme de " + alterpaws[randomalterpaws] + ".";
+								descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + " pattes en forme de " + alterpaws[randomalterpaws] + ".";
 							}
 						}
 
@@ -591,16 +585,16 @@ function chimeraCalcul(){
 						let mixpaws = Math.floor(Math.random() *2);
 						if(mixpaws === 0){
 							descriPaws.style.margin = "10px 0px";
-							descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes" + stylePaws[randomStylePaws] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+							descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes" + stylePaws[randomStylePaws] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 						}else if(mixpaws === 1){
 							descriPaws.style.margin = "10px 0px";
-							descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes avec " + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+							descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + pawsLength[randomPawlength] + " pattes avec " + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 						}else if (mixpaws === 2){
 							descriPaws.style.margin = "10px 0px";
-							descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + " pattes" + stylePaws[randomStylePaws] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+							descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + " pattes" + stylePaws[randomStylePaws] + ' avec ' + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 						}else{
 							descriPaws.style.margin = "10px 0px";
-							descriPaws.innerHTML = "il possède " + extraRacePaws + numberPaws + " pattes avec " + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
+							descriPaws.innerHTML = "Il possède " + extraRacePaws + numberPaws + " pattes avec " + (numberfinger + 2) + ' ' + stylefinger[randomstylefinger] + ".";
 						}
 
 						//les pattes secondaires
@@ -615,21 +609,21 @@ function chimeraCalcul(){
 							extraFinger()
 							if(numberextrafinger !== numberfinger && randomstyleextrafinger !== randomstylefinger){
 								descriPawsExtra.style.margin = "10px 0px";
-								descriPawsExtra.innerHTML = "mais les pattes " + ordermix[randomOrdermix] + " ont " + (numberextrafinger + 2) +  ' ' + stylefinger[randomstyleextrafinger] + "."
+								descriPawsExtra.innerHTML = "Mais les pattes " + ordermix[randomOrdermix] + " ont " + (numberextrafinger + 2) +  ' ' + stylefinger[randomstyleextrafinger] + "."
 							}else if(numberextrafinger !== numberfinger && randomstyleextrafinger === randomstylefinger){
 								descriPawsExtra.style.margin = "10px 0px";
-								descriPawsExtra.innerHTML = "mais les pattes " + ordermix[randomOrdermix] + " en ont " + (numberextrafinger + 2) +  "."
+								descriPawsExtra.innerHTML = "Mais les pattes " + ordermix[randomOrdermix] + " en ont " + (numberextrafinger + 2) +  "."
 							}else if(numberextrafinger === numberfinger && randomstyleextrafinger !== randomstylefinger){
 								descriPawsExtra.style.margin = "10px 0px";
-								descriPawsExtra.innerHTML = "mais les pattes " + ordermix[randomOrdermix] + " ont des " + stylefinger[randomstyleextrafinger] + "."
+								descriPawsExtra.innerHTML = "Mais les pattes " + ordermix[randomOrdermix] + " ont des " + stylefinger[randomstyleextrafinger] + "."
 							}
 						}else if(ifspecialpaws ===1){
 							let randomalterpaws = Math.floor(Math.random() *alterpaws.length);
 							descriPawsExtra.style.margin = "10px 0px";
-							descriPawsExtra.innerHTML = "mais les pattes " + ordermix[randomOrdermix] + " sont en forme de " + alterpaws[randomalterpaws] + "."
+							descriPawsExtra.innerHTML = "Mais les pattes " + ordermix[randomOrdermix] + " sont en forme de " + alterpaws[randomalterpaws] + "."
 						}else{
 							descriPawsExtra.style.margin = "10px 0px";
-							descriPawsExtra.innerHTML = "mais les pattes " + ordermix[randomOrdermix] + " sont des tentacules."
+							descriPawsExtra.innerHTML = "Mais les pattes " + ordermix[randomOrdermix] + " sont des tentacules."
 						}
 					}
 				}
@@ -655,10 +649,10 @@ function chimeraCalcul(){
 		}
 		if(ifbonus === 0){
 			descriTail.style.margin = "10px 0px";
-			descriTail.innerHTML = 'il a une queue' + tail[randomtail] + '.';
+			descriTail.innerHTML = 'Il a une queue' + tail[randomtail] + '.';
 		}else{
 			descriTail.style.margin = "10px 0px";
-			descriTail.innerHTML = 'il a une queue' + tail[randomtail] + ' ainsi ' + finalbonus + '.';
+			descriTail.innerHTML = 'Il a une queue' + tail[randomtail] + ' ainsi ' + finalbonus + '.';
 		}
 
 	//pas de queue
@@ -677,10 +671,10 @@ function chimeraCalcul(){
 		}
 		if(ifbonus !== 0){
 			descriTail.style.margin = "10px 0px";
-			descriTail.innerHTML = 'il n\'a pas de queue, mais il a ' + finalbonus + '.';
+			descriTail.innerHTML = 'Il n\'a pas de queue, mais il a ' + finalbonus + '.';
 		}else{
 			descriTail.style.margin = "10px 0px";
-			descriTail.innerHTML = 'il n\'a pas de queue.';
+			descriTail.innerHTML = 'Il n\'a pas de queue.';
 		}
 	}
 }

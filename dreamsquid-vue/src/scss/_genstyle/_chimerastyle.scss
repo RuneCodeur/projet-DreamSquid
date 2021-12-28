@@ -1,0 +1,32 @@
+#chimeraGen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    #descriChimera{
+        background-color: $colortertiary;
+        border-radius: 30px 30px 10px 10px;
+        border: 5px black solid;
+        display: flex;
+        font-size: 23px;
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: $colorSecundary;
+        padding: 0 20px 0 20px;
+        width: 70%;
+        max-width: 800px;
+        min-height: 80px;
+        margin: 0 0 20px 0;
+        div{
+            font-size: 20px;
+            color: $colorSecundary;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

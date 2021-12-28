@@ -1,33 +1,27 @@
 <template>
-<div>header</div>
+
+  <header>
+    <div class="bkgd-header">
+    <div style="color: black; text-align: center; font-size: 22px;">-- version ALPHA 0.4.0.0 --</div>
+      <img src="./assets/logo-dreamsquid.svg" alt="logo DreamSquid">
+      <h1>DreamSquid</h1>
+      <p>un générateur de description aléatoire, pour dessiner à partir d'un texte !</p>
+    </div>
+  </header>
+
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/generator">About</router-link> |
+    <router-link to="/">Acueil</router-link> |
+    <router-link to="/generator">Générateur</router-link> |
     <router-link to="/search">rechercher</router-link>
   </div>
+
   <router-view/>
-<div>footer</div>
+
+  <footer> <div class="discord">tu souhaite participer au projet ? un serveur discord est disponible <a href="https://discord.gg/PDvd877ygT"><i class="fab fa-discord"></i>Discord</a></div>
+    <div>contact: <a href="mailto:rackhamledev@gmail.com">rackhamledev@gmail.com</a></div>
+  </footer>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style lang="scss">
+  @import './scss/style.scss';
 </style>

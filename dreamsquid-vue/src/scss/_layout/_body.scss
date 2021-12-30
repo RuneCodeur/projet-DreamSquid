@@ -35,9 +35,16 @@
                     min-width: 150px;
                     display: flex;
                     justify-content: center;
+                    align-items: flex-end;
                     margin: 15px 0 0 0;
                     border-bottom: 3px black solid;
-                    div{
+                    input{
+                        display: none;
+                    }
+                    input:checked + label{
+                        box-shadow: inset 5px 5px 10px black;
+                    }
+                    label{
                         margin: 0 10px;
                         padding: 0;
                         border-left: 3px black solid;
@@ -52,9 +59,8 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        h2{
-                            margin: 0;
-                        }
+                        text-align: center;
+                        cursor: pointer;
                     }
                 }
             }

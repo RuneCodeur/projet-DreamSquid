@@ -26,15 +26,25 @@
                 </ul>
             </div>
     <PokeCalcul v-if="calcul === '0'"/>
+    <RpgCalcul v-if="calcul === '1'"/>
+    <PersonaCalcul v-if="calcul === '2'"/>
+    <ChimeraCalcul v-if="calcul === '3'"/>
   </div>
 </template>
 
 <script>
-import PokeCalcul from '../components/PokeCalcul.vue'
+import PokeCalcul from '../components/PokeCalcul.vue';
+import RpgCalcul from '../components/RpgCalcul.vue';
+import PersonaCalcul from '../components/PersonaCalcul.vue';
+import ChimeraCalcul from '../components/ChimeraCalcul.vue';
+
 export default {
   name: 'generator',
   components: {
     PokeCalcul,
+    RpgCalcul,
+    ChimeraCalcul,
+    PersonaCalcul
   },
   data() {
     return {

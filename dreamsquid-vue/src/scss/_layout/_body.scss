@@ -5,69 +5,78 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        .generator{
+        width: 100%;
+        #app{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 85%;
-            padding: 40px 5% 0 5% ;
-            #themeGeneral{
+            width: 100%;
+            .generator{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                width: 100%;
-                margin: 0 0 25px 0;
-                p{
-                text-decoration: underline;
-                margin: 0;
-                }
-                #theme{
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                width: 100%;
-                max-width: 750px;
-                margin: 10px 0 0 0;
-                .ensemble-carton{
-                    width: 25%;
-                    min-width: 150px;
+                width: 85%;
+                padding: 40px 5% 0 5% ;
+                #themeGeneral{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    margin: 0 0 25px 0;
+                    p{
+                    text-decoration: underline;
+                    margin: 0;
+                    }
+                    #theme{
                     display: flex;
                     justify-content: center;
-                    align-items: flex-end;
-                    margin: 15px 0 0 0;
-                    border-bottom: 3px black solid;
-                    input{
-                        display: none;
-                    }
-                    input:checked + label{
-                        box-shadow: inset 5px 5px 10px black;
-                    }
-                    label{
-                        margin: 0 10px;
-                        padding: 0;
-                        border-left: 3px black solid;
-                        border-top: 3px black solid;
-                        border-right: 3px black solid;
-                        background-color: $colorPrimary;
-                        border-radius: 10px 10px 0 0;
-                        color: white;
-                        width: 130px;
-                        min-width: 130px;
-                        height: 40px;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    max-width: 750px;
+                    padding: 0;
+                    margin: 10px 0 0 0;
+                    .ensemble-carton{
+                        width: 25%;
+                        min-width: 150px;
                         display: flex;
                         justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        cursor: pointer;
+                        align-items: flex-end;
+                        margin: 15px 0 0 0;
+                        border-bottom: 3px black solid;
+                        input{
+                            display: none;
+                        }
+                        input:checked + label{
+                            box-shadow: inset 5px 5px 10px black;
+                        }
+                        label{
+                            margin: 0 10px;
+                            padding: 0;
+                            border-left: 3px black solid;
+                            border-top: 3px black solid;
+                            border-right: 3px black solid;
+                            background-color: $colorPrimary;
+                            border-radius: 10px 10px 0 0;
+                            color: white;
+                            width: 130px;
+                            min-width: 130px;
+                            height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            cursor: pointer;
+                        }
                     }
                 }
+            }.descriptionGen{
+                margin: 0 0 30px 0;
+                text-align: center;
+                font-weight: normal;
             }
-        }.descriptionGen{
-            margin: 0 0 30px 0;
-            text-align: center;
-            font-weight: normal;
         }
     }
 }

@@ -19,7 +19,7 @@
         max-width: 800px;
         min-height: 80px;
         div{
-            font-size: 20px;
+            font-size: 23px;
             color: $colorSecundary;
             display: flex;
             text-align: center;
@@ -45,6 +45,7 @@
         justify-content: center;
         align-items: center;
         color: $colorSecundary;
+        font-size: 23px;
     }
     ul{
         background-color: darken($colortertiary, $amount: 20%);

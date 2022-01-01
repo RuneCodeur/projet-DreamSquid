@@ -5,22 +5,23 @@
                 <ul id="theme">
 
                     <li class="ensemble-carton">
-                        <input type="radio" id="pokemon" value="0" v-model="calcul" >
-                        <label for="pokemon">Pokémon</label>
+                      <input type="radio" id="pokemon" value="0" v-model="calcul" >
+                      <label for="pokemon">Pokémon</label>
                     </li> 
                     
                     <li class="ensemble-carton">
                       <input type="radio" id="JDR" value="1" v-model="calcul" >
-                        <label for="JDR">JDR créator</label>
+                      <label for="JDR">JDR créator</label>
                     </li>
 
                     <li class="ensemble-carton">
                       <input type="radio" id="Persona" value="2" v-model="calcul" >
-                        <label for="Persona">Persona</label>
+                      <label for="Persona">Persona</label>
                     </li>
+
                     <li class="ensemble-carton">
                       <input type="radio" id="Chimera" value="3" v-model="calcul" >
-                        <label for="Chimera">Chimera</label>
+                      <label for="Chimera">Chimera</label>
                     </li>
 
                 </ul>

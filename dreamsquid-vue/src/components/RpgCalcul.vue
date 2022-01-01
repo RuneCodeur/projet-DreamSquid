@@ -4,12 +4,12 @@
         
         <div id="description">
             <div v-if="descriGen === ''">Clique sur le bouton, si tu veux une description !</div>
-            <div v-if="descriGen != ''">Imagine : <br> {{descriGen}}</div>
-            <div v-if="descriEquip != ''">{{descriEquip}}</div>
-            <div v-if="descriCorps != ''">{{descriCorps}}</div>
-            <div v-if="descriFace != ''">{{descriFace}}</div>
-            <div v-if="descriPoils != ''">{{descriPoils}}</div>
-            <div v-if="descriExtra != ''">{{descriExtra}}</div>
+            <div v-if="descriGen != ''">Imagine : <br> {{descriGen}} </div>
+            <div v-if="descriEquip != ''"> {{descriEquip}} </div>
+            <div v-if="descriCorps != ''"> {{descriCorps}} </div>
+            <div v-if="descriFace != ''"> {{descriFace}} </div>
+            <div v-if="descriPoils != ''"> {{descriPoils}} </div>
+            <div v-if="descriExtra != ''"> {{descriExtra}} </div>
         </div>
 
         <div id="titleAlign">Alignement</div>

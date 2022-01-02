@@ -69,7 +69,7 @@ export default {
     bonusMix(race1){
       let race2 = Math.floor(Math.random() *this.form.length);
       if(this.form[race1] === this.form[race2]){
-        this.bonusMix(race1);
+        return this.bonusMix(race1);
       }else{
         return race2
       }
@@ -79,7 +79,7 @@ export default {
     calculColorSkin2 (colorSkin1) {
       let colorSkin2 = Math.floor(Math.random() *this.colorskin.length);
       if(this.colorskin[colorSkin2] == this.colorskin[colorSkin1] || this.colorskin[colorSkin2] == 'arc-en-ciel'){
-        this.calculColorSkin2(colorSkin1)
+        return this.calculColorSkin2(colorSkin1)
       }else{
         return colorSkin2
       }
@@ -89,7 +89,7 @@ export default {
     calculColorSkin3(colorSkin1, colorSkin2){
       let colorSkin3 = Math.floor(Math.random() *this.colorskin.length);
       if(this.colorskin[colorSkin3] == this.colorskin[colorSkin1] || this.colorskin[colorSkin3] == this.colorskin[colorSkin2] || this.colorskin[colorSkin3] == 'arc-en-ciel'){
-        this.calculColorSkin3(colorSkin1, colorSkin2)
+        return this.calculColorSkin3(colorSkin1, colorSkin2)
       }else{
         return colorSkin3
       }
@@ -100,14 +100,14 @@ export default {
       if(multiple === 0){
         let bonusTentacle = Math.floor(Math.random() * this.extratentacle.length)
         if(tentacles === bonusTentacle){
-          this.extrabonustentacle(tentacles, multiple);
+          return this.extrabonustentacle(tentacles, multiple);
         }else{
           return bonusTentacle
         }
       }else{
         let bonusTentacle = Math.floor(Math.random() * this.extratentacles.length)
         if(tentacles === bonusTentacle){
-          this.extrabonustentacle(tentacles, multiple);
+          return this.extrabonustentacle(tentacles, multiple);
         }else{
           return bonusTentacle
         }
@@ -118,7 +118,7 @@ export default {
     extraFinger (finger){
       let extraFinger = Math.floor(Math.random() *5);
       if(extraFinger === finger){
-        this.extraFinger(finger);
+        return this.extraFinger(finger);
       }else{
         return extraFinger
       }
@@ -128,7 +128,7 @@ export default {
     extraStyleFinger(styleFinger){
       let extraStyleFinger = Math.floor(Math.random() * this.stylefinger.length)
       if( extraStyleFinger === styleFinger){
-        this.extraStyleFinger(styleFinger);
+        return this.extraStyleFinger(styleFinger);
       }else{
         return extraStyleFinger
       }
@@ -136,7 +136,7 @@ export default {
 
     calcul(){
       let randomform1 = Math.floor(Math.random() *this.form.length);
-      let randomform2 = Math.floor(Math.random() *this.form.length);
+      let randomform2 = this.bonusMix(randomform1);
       let randomMix = Math.floor(Math.random() *3);
       let randomOrigin = Math.floor(Math.random() *this.origin.length);
       let randomVarColorskin = Math.floor(Math.random() *5);
@@ -168,7 +168,7 @@ export default {
         this.descriForm = "Il a la forme d'un " + this.form[randomform1] + ".";
       }
       if(randomMix == 1){
-        this.descriForm = "Il ressemble à un mélange entre un " + this.form[randomform1] + " et un " + this.form[this.bonusMix(randomform1)] + ".";
+        this.descriForm = "Il ressemble à un mélange entre un " + this.form[randomform1] + " et un " + this.form[randomform2] + ".";
       }
 
       //la taille
@@ -180,15 +180,16 @@ export default {
       }
 
       //la peau
-      if(randomskin == this.skin.length+1){
+      if(randomskin == this.skin.length){
         if(this.colorskin[randomColorskin1] == 'arc-en-ciel'){
           this.descriSkin = "Sa peau est de couleur arc-en-ciel.";
+
         }else{
           if(randomVarColorskin == 0){
             this.descriSkin = "Sa peau est de couleur " + this.colorskin[randomColorskin1] + ".";
           }
           if(randomVarColorskin == 1){
-            this.descriSkin = "Sa peau est de couleur " + this.colorskin[randomColorskin1] + " avec des parties " + this.colorskin[this.calculcolorSkin2(randomColorskin1)] + ".";
+            this.descriSkin = "Sa peau est de couleur " + this.colorskin[randomColorskin1] + " avec des parties " + this.colorskin[this.calculColorSkin2(randomColorskin1)] + ".";
           }
           if(randomVarColorskin == 2){
             let randomColorskin2 = this.calculColorSkin2(randomColorskin1);
@@ -355,6 +356,7 @@ export default {
         ifMoluskAsPaws = Math.floor(Math.random() *2);
       }
 
+
       //les pattes (sauf pour les serpents pur et les molusques pur qui n'ont pas de patte)
       if(!(this.form[randomform1] == 'serpent' && (randomMix == 0)) || ifMoluskAsPaws == 1){
         let randomPaws = Math.floor(Math.random() *10);
@@ -403,17 +405,19 @@ export default {
             extraRacePaws = "plusieurs paires d'ailes et ";
           }
         }
+        
         //si c'est un oiseau, rajoute des ailes
         if(this.form[randomform1] == 'oiseau' || this.form[randomform2] == 'oiseau'){
           let randomBirdWings = Math.floor(Math.random() *3);
           if(extraRacePaws == ""){
-            extraRacePaws = "une paire d'ailes  et ";
+            extraRacePaws = "une paire d'ailes et ";
           }else if(randomBirdWings == 1){
             extraRacePaws = "2 paires d'ailes et ";
           }else if(randomBirdWings == 2){
             extraRacePaws = "3 paires d'ailes  et ";
           }
         }
+
         // si c'est un poisson, rajoute des nageoires
         if(this.form[randomform1] == 'poisson' || this.form[randomform2] == 'poisson'){
           if(extraRacePaws == ""){
@@ -434,7 +438,7 @@ export default {
         }
 
         //calcul des pattes
-        if(numberPaws > 0){
+        if(numberPaws != 0){
           let randomPawlength = Math.floor(Math.random() *this.pawLength.length);
           let ifPawOrTentacle = Math.floor(Math.random() *2);
 
@@ -476,9 +480,9 @@ export default {
               if(ifmixed === 1){	
                 let oneOrMoreTentacles = Math.floor(Math.random() *2);
                 if(oneOrMoreTentacles === 0){
-                  this.descriPaws = 'L\'une d\'entre elles possède ' + this.extratentacle[this.extrabonustentacle(randomextratentacle, oneOrMoreTentacles)] + '.';
+                  this.descriPawsExtra = 'L\'une d\'entre elles possède ' + this.extratentacle[this.extrabonustentacle(randomextratentacle, oneOrMoreTentacles)] + '.';
                 }else{
-                  this.descriPaws = 'Mais certaines d\'entre elles possèdent ' + this.extratentacles[this.extrabonustentacle(randomextratentacles, oneOrMoreTentacles)] + '.';
+                  this.descriPawsExtra = 'Mais certaines d\'entre elles possèdent ' + this.extratentacles[this.extrabonustentacle(randomextratentacles, oneOrMoreTentacles)] + '.';
                 }
               }
             }

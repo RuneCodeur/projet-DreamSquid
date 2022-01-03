@@ -12,11 +12,11 @@
             <div v-if="descriExtra != ''"> {{descriExtra}} </div>
         </div>
 
-        <div id="titleAlign">Alignement</div>
-        <div id="align">{{align}}</div>
+        <div v-if="align != ''" id="titleAlign">Alignement</div>
+        <div v-if="align != ''" id="align">{{align}}</div>
 
-        <div id="titleStat">Statistiques</div>
-        <ul>
+        <div v-if="align != ''" id="titleStat">Statistiques</div>
+        <ul v-if="align != ''" >
             <li>
                 <p>Force</p>
                 <div>{{fo}}</div>
@@ -56,7 +56,7 @@ export default {
             descriFace:'',
             descriPoils:'',
             descriExtra:'',
-            align:'neutre',
+            align:'',
             fo:'0',
             dex:'0',
             co:'0',

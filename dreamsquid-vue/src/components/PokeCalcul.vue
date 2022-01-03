@@ -1,9 +1,11 @@
 <template>
     <div id="pokeGen">
         <p class="descriptionGen"> Clique sur le bouton, et le générateur te donnera la description d'un nouveau Pokémon complètement unique ! </p>
-        <div id="maBestiole">{{ValueBestiole}}</div>
-        <div class="deType">de type</div>
-        <div id="monType">{{ValuemonType}}</div>
+        
+        <div v-if="ValueBestiole === ''"  id="maBestiole"> Clique sur le bouton, si tu veux une description ! </div>
+        <div v-if="ValueBestiole != ''" id="maBestiole">{{ValueBestiole}}</div>
+        <div  v-if="ValuemonType != ''" class="deType">de type</div>
+        <div  v-if="ValuemonType != ''" id="monType">{{ValuemonType}}</div>
     </div>
   <input id="random" type="button" value="Un autre !" @click="calcul()">    
 </template>
@@ -19,9 +21,6 @@ export default {
       bestioleList: ["un dinosaure","un kangourou", "un elementaire", "un singe", "un guerrier", "un serpent", "un lézard", "un fauve", "un bovin", "un oiseau", "un poisson", "un objet", "un rongeur", "un molusque"],
       qualityList: ["avec des gros bras", "avec un seul oeil", "qui aime la musique", "avec un attribut culinaire", "avec des cornes ou des pics partout", "trop mignon", "divin", "qui fait de la magie", "avec un gros visage", "en version gros balèze", "spectral", "un peu flippant", "un peu moche"],
     }
-  },
-  created() {
-    this.calcul()
   },
   methods: {
 

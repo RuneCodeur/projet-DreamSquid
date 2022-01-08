@@ -1,7 +1,7 @@
 <template>
   <div class="generator">
     <div id="themeGeneral">
-                <p>Choix du theme</p> 
+                <p>Choix du thème</p> 
                 <ul id="theme">
 
                     <li class="ensemble-carton">

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>DreamSquid - générateur aléatoire</title>
+    <meta name="viewport" content="width=350, initial-scale=0.9" />
+    <link rel="icon" href="ressource/icon dreamsquid.svg" sizes="32x32">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Texturina:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bkgd-ajust">
+        <header>
+            <div class="bkgd-header">
+                <div style="color: black; text-align: center; font-size: 22px;">-- version ALPHA 0.4.0.0 --</div>
+                <img src="ressource/logo dreamsquid.svg" alt="logo DreamSquid">
+                <h1>DreamSquid</h1>
+                <p>un générateur de description aléatoire, pour dessiner à partir d'un texte !</p>
+            </div>
+        </header>
+        <div id="generatorGeneral">
+            <div id="themeGeneral">
+                <p>Choix du theme</p> 
+                <div id="theme">
+                    <div class="ensemble-carton"><div id="pokeTheme"><h2>Pokémon</h2></div></div> 
+                    <div class="ensemble-carton"><div id="rpgTheme"><h2>JDR créator</h2></div></div>
+                    <div class="ensemble-carton"><div id="personaTheme"><h2>Persona</h2></div></div>
+                    <div class="ensemble-carton"><div id="chimeraTheme"><h2>Chimera</h2></div></div>
+                </div>
+            </div>
+
+            <div id="pokeGen">
+                <p class="descriptionGen"> Clique sur le bouton, et le générateur te donnera la description d'un nouveau Pokémon complètement unique ! </p>
+                <div id="maBestiole"></div>
+                <div class="deType">de type</div>
+                <div id="monType"></div>
+            </div>
+
+            <div id="rpgGen">
+                <p class="descriptionGen"> Clique sur le bouton, et le générateur te donnera la description aléatoire d'un personnage de JDR, avec ses propre stats et son alignement !</p>
+                <div id="description">
+                    <div id="descri-general"> Clique sur le bouton, si tu veux une description ! </div>
+                    <div id="descri-equip"></div>
+                    <div id="descri-corps"></div>
+                    <div id="descri-face"></div>
+                    <div id="descri-poils"></div>
+                    <div id="descri-compo"></div>
+                </div>
+                <div id="titleAlign">Alignement</div>
+                <div id="align">neutre</div>
+                <div id="titleStat">Statistiques</div>
+                <ul>
+                    <li>
+                        <p>Force</p>
+                        <div id="fo">0</div>
+                    </li>
+                    <li>
+                        <p>Dexterité</p> 
+                        <div id="dex">0</div>
+                    </li>
+                    <li>
+                        <p>Constitution</p> 
+                        <div id="co">0</div>
+                    </li>
+                    <li>
+                        <p>Intelligence</p> 
+                        <div id="int">0</div>
+                    </li>
+                    <li>
+                        <p>Sagesse</p> 
+                        <div id="sag">0</div>
+                    </li>
+                    <li>
+                        <p>Charisme</p> 
+                        <div id="cha">0</div>
+                    </li>
+                </ul>
+            </div>
+            <div id="personaGen">
+                <p class="descriptionGen">Clique sur le bouton, et le générateur te donnera la description détaillé d'une personne !</p>
+                <div id="descriPersona">
+                   <div id="descri-gene-perso">Clique sur le bouton, si tu veux une description !</div>
+                   <div id="descri-gene-hair"></div>
+                   <div id="descri-gene-eye"></div>
+                   <div id="descri-gene-neck"></div>
+                   <div id="descri-gene-bottom"></div>
+                   <div id="descri-gene-top"></div>
+                   <div id="descri-gene-bonus"></div>
+                </div>
+            </div>
+            <div id="chimeraGen">
+                <p class="descriptionGen">Clique sur le bouton, et le générateur te donnera la description d'une créature imaginaire !</p>
+                <div id="descriChimera">
+                    <div id="descri-chimera-gen">Clique sur le bouton, si tu veux une description !</div>
+                    <div id="descri-chimera-form"></div>
+                    <div id="descri-chimera-size"></div>
+                    <div id="descri-chimera-skin"></div>
+                    <div id="descri-chimera-head"></div>
+                    <div id="descri-chimera-bonus"></div>
+                    <div id="descri-chimera-paws"></div>
+                    <div id="descri-chimera-paws-extra"></div>
+                    <div id="descri-chimera-tail"></div>
+                </div>
+            </div>
+            <input id="random" type="button" value="Un autre !">
+        </div>
+        
+    </div>
+
+    <footer> <div class="discord">tu souhaite participer au projet ? un serveur discord est disponible <a href="https://discord.gg/PDvd877ygT"><i class="fab fa-discord"></i>Discord</a></div>
+        <div>contact: <a href="mailto:rackhamledev@gmail.com">rackhamledev@gmail.com</a></div>
+    </footer>
+
+    <script src="calculator/gestion-calculator.js"></script>
+    <script src="calculator/poke-calcul.js"></script>
+    <script src="calculator/rpg-calcul.js"></script>
+    <script src="calculator/persona-calcul.js"></script>
+    <script src="calculator/chimera-calcul.js"></script>
+</body>
+</html>

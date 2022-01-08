@@ -2,7 +2,6 @@
 
   <header>
     <div class="bkgd-header">
-    <div style="color: black; text-align: center; font-size: 22px;">-- version ALPHA 0.4.0.0 --</div>
       <img src="./assets/logo-dreamsquid.svg" alt="logo DreamSquid">
       <h1>DreamSquid</h1>
       <p>un générateur de description aléatoire, pour dessiner à partir d'un texte !</p>

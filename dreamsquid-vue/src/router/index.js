@@ -1,20 +1,15 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
+import { createRouter, createWebHistory } from 'vue-router';
+import generator from '../views/generator.vue';
+import search from '../views/search.vue';
 const routes = [
   {
-    path: '/',
-    name: '',
-    component: () => import('../views/generator.vue')
+    path: '/', component: generator
   },
   {
-    path: '/generator',
-    name: 'generator',
-    component: () => import('../views/generator.vue')
+    path: '/generator', component: generator
   },
   {
-    path: '/search',
-    name: 'search',
-    component: () => import('../views/search.vue')
+    path: '/search', component: search
   }
 ]
 

@@ -38,11 +38,18 @@ futur MAJ
 page du randomizer 		// le randomizer
 page ajouter une image 	// pour ajouter une image,il faut d'abord creer un compte
 page history 			// pour raconter l'origine du projet
-page recherche 			// page pour chercher le theme et la création
+page recherche 			// page recherche par theme et mots clés
 page recherche mot clé	// page recherche par mot clés
-page recherche user 	// page d'un element crée par un utilisateur
+page recherche user 	// page recherche par utilisateur
 page connexion 			// pour se connecter ou creer un compte
 page profil 			// page de son propre compte 
 page option 			// pour modifier des trucs sur son compte
 page message privé		// pour voir ses messages privées échangé avec un autre compte
 page défi 				// bonus avec une description personalisé et temporalisé
+
+routes du serveur node:
+route create account (nodemailer)
+route connect account
+route save descri
+route add picture
+route search picture

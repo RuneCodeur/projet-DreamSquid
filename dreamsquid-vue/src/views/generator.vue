@@ -1,58 +1,80 @@
 <template>
   <div class="generator">
     <div id="themeGeneral">
-                <p>Choix du thème</p> 
-                <ul id="theme">
 
-                    <li class="ensemble-carton">
-                      <input type="radio" id="pokemon" value="0" v-model="calcul" >
-                      <label for="pokemon">Pokémon</label>
-                    </li> 
+        <p>Choix du thème</p>
+
+        <ul id="theme">
+
+          <li class="ensemble-carton">
+            <input type="radio" id="pokemon" value="0" v-model="calcul" >
+            <label for="pokemon">Pokémon</label>
+          </li> 
                     
-                    <li class="ensemble-carton">
-                      <input type="radio" id="JDR" value="1" v-model="calcul" >
-                      <label for="JDR">JDR créator</label>
-                    </li>
+          <li class="ensemble-carton">
+            <input type="radio" id="JDR" value="1" v-model="calcul" >
+            <label for="JDR">JDR créator</label>
+          </li>
 
-                    <li class="ensemble-carton">
-                      <input type="radio" id="Persona" value="2" v-model="calcul" >
-                      <label for="Persona">Persona</label>
-                    </li>
+          <li class="ensemble-carton">
+            <input type="radio" id="Persona" value="2" v-model="calcul" >
+            <label for="Persona">Persona</label>
+          </li>
 
-                    <li class="ensemble-carton">
-                      <input type="radio" id="Chimera" value="3" v-model="calcul" >
-                      <label for="Chimera">Chimera</label>
-                    </li>
+          <li class="ensemble-carton">
+            <input type="radio" id="Chimera" value="3" v-model="calcul" >
+            <label for="Chimera">Chimera</label>
+          </li>
 
-                </ul>
-            </div>
+        </ul>
+    </div>
+    
     <PokeCalcul v-if="calcul === '0'"/>
     <RpgCalcul v-if="calcul === '1'"/>
     <PersonaCalcul v-if="calcul === '2'"/>
     <ChimeraCalcul v-if="calcul === '3'"/>
+
+    <Icon-User/>
   </div>
 </template>
 
 <script>
-import PokeCalcul from '../components/PokeCalcul.vue';
-import RpgCalcul from '../components/RpgCalcul.vue';
-import PersonaCalcul from '../components/PersonaCalcul.vue';
-import ChimeraCalcul from '../components/ChimeraCalcul.vue';
+  import { mapState } from 'vuex';
+  import PokeCalcul from '../components/PokeCalcul.vue';
+  import RpgCalcul from '../components/RpgCalcul.vue';
+  import PersonaCalcul from '../components/PersonaCalcul.vue';
+  import ChimeraCalcul from '../components/ChimeraCalcul.vue';
+  import IconUser from '../components/icon-user.vue';
+  import session from '../components/session.js';
 
-export default {
-  name: 'generator',
-  components: {
-    PokeCalcul,
-    RpgCalcul,
-    ChimeraCalcul,
-    PersonaCalcul
-  },
-  data() {
-    return {
-      calcul: '0',
+  export default {
+
+    name: 'generator',
+    
+    computed:{
+      ... mapState(['tokenStore',]),
+    },
+
+    components: {
+      PokeCalcul,
+      RpgCalcul,
+      ChimeraCalcul,
+      PersonaCalcul,
+      IconUser,
+    },
+
+    data() {
+      return {
+        calcul: '0',
+      }
+    },
+    
+    created() {
+      session.PersistentSession(this);
+    },
+
+    methods:{
     }
-  },
-  methods:{
+
   }
-}
 </script>

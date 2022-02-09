@@ -1,6 +1,6 @@
 <template>
     <div id="rpgGen">
-        <p class="descriptionGen"> Clique sur le bouton, et le générateur te donnera la description aléatoire d'un personnage de JDR, avec ses propre stats et son alignement !</p>
+        <p class="descriptionGen"> Clique sur le bouton, et le générateur te donnera la description d'un personnage de JDR, avec ses propre stats et son alignement !</p>
         
         <div id="description">
             <div v-if="descriGen === ''">Clique sur le bouton, si tu veux une description !</div>

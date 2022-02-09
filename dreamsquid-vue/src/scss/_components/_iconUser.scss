@@ -1,0 +1,74 @@
+#icon-user{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+
+    .link-to-connect{
+        width: 120px;
+        display: flex;
+        font-size: 18px;
+        border-radius: 7px ;
+        text-align: center;
+        justify-content: center;
+        font-family: 'Texturina', serif;
+        text-decoration: none;
+        margin: 0;
+        padding: 10px;
+        background-color: $colortertiary;
+        p{
+            font-size: 18px;
+            margin: 0;
+        }
+    }
+    .link-to-connect:hover{
+        text-decoration: underline;
+    }
+
+    .icon-user{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        height: 150px;
+        p{
+            margin: 0;
+        }
+        .icon{
+            border-radius: 7px ;
+            text-decoration: none;
+            text-align: center;
+            background-color: lighten($color: $colorquatuary, $amount: 30);
+            z-index: 1;
+            
+            i{
+                color: $colorPrimary;
+                padding: 7px;
+                font-size: 60px;
+            }
+        }
+        .disconnect{
+            transition-duration: 0.2s;
+            display: flex;
+            position: relative;
+            bottom: 55px;
+            font-size: 18px;
+            border-radius: 7px ;
+            font-family: 'Texturina', serif;
+            margin: 0;
+            padding: 5px 10px 5px 10px;
+            background-color: $colortertiary;
+        }
+        .disconnect:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    .icon-user:hover{
+        .disconnect{
+            bottom: -10px;
+        }
+    }
+}

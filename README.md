@@ -4,22 +4,6 @@ le projet est construit avec les languages HTML, SASS, Javascript et vue.js.
 Le projet est disponible à l'adresse suivante : https://dreamsquid.netlify.app
 
 ---------------
-installation et lancement en local
----------------
-telechargez et décompresser le projet dans un dossier -> https://github.com/rackhamledev/projet-DreamSquid.git
-telechargez et installer node avec le lien -> https://nodejs.org/fr/download/
-
-recuperez le chemin du dossier du projet (ex: C:\Users\Jean\Desktop\projet\dreamsquid)
-et effectuez les commandes suivantes dans un invite de commande :
-
-    cd 'chemin du dossier du projet\dreamsquid-vue'
-    npm install
-	npm run serve
-
-le site est disponible en version local en suivant le lien suivant : http://localhost:8080/
-
-
----------------
 futur MAJ
 ---------------
 

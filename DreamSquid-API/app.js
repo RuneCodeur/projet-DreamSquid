@@ -6,6 +6,8 @@ const helmet = require('helmet');
 const path = require('path');
 const connection = require('./connect');
 
+const userRoutes = require('./routes/user');
+
 const limiter = rateLimit({
   windowMs: 60 * 1000, 
   max: 100
@@ -27,7 +29,8 @@ const app = express();
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Credentials', 'true')
   next();
 });
 
@@ -39,6 +42,7 @@ app.use(xss());
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 //routes
+app.use('/auth', userRoutes);
 
 module.exports = app;
 

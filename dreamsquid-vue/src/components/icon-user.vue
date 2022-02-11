@@ -7,11 +7,12 @@
       <div class='icon-user' v-else >
         <router-link to="/user" class="icon">
           <p>mon compte</p>
-          <i class="fas fa-user-circle"></i>
+          <i class="fa-solid fa-circle-user"></i>
         </router-link>
           
         <div class="disconnect" @click="disconnect()">
-          <p>Déconnection</p>
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <p>Déconnexion</p>
         </div>
 
       </div>

@@ -1,8 +1,9 @@
 #icon-user{
     position: absolute;
-    right: 0;
+    right: 0px;
     top: 0;
     margin: 10px;
+    padding: 0;
 
     .link-to-connect{
         width: 120px;
@@ -46,7 +47,7 @@
             i{
                 color: $colorPrimary;
                 padding: 7px;
-                font-size: 60px;
+                font-size: 50px;
             }
         }
         .disconnect{
@@ -60,6 +61,9 @@
             margin: 0;
             padding: 5px 10px 5px 10px;
             background-color: $colortertiary;
+            i{
+                display: none;
+            }
         }
         .disconnect:hover{
             text-decoration: underline;
@@ -69,6 +73,51 @@
     .icon-user:hover{
         .disconnect{
             bottom: -10px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    #icon-user{
+        position:static;
+        margin: 0;
+        .link-to-connect{
+            width: 100%;
+            border-radius: 0;
+            padding: 10px 0;
+        }
+
+        .icon-user{
+            height: 70px;
+            flex-direction: row;
+            .icon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 70%;
+                border-radius: 0;
+                p{
+                    display: none;
+                }
+            }
+
+            .disconnect{
+                position: static;
+                width: 30%;
+                border-radius: 0;
+                padding: 0;
+                align-items: center;
+                justify-content: center;
+                i{
+                    display: flex;
+                    color: aliceblue;
+                    font-size: 50px;
+                }
+                p{
+                    display: none;
+                }
+            }
         }
     }
 }

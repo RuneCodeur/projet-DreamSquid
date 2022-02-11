@@ -11,24 +11,38 @@ header{
         flex-direction: column;
         background-color: rgba(255, 255, 255, 0.7);
         img{
-            height: 250px;
+            height: 200px;
             margin: 20px 0 0 0;
         }
         h1{
             font-family: 'Texturina', serif;
             display: flex;
             align-items: center;
+            text-align: center;
             justify-content: center;
             color: $colorPrimary;
             margin: 0;
-            font-size: 50px;
-            text-shadow: 4px -2px 0px black;
+            font-size: 40px;
+            text-shadow: 3px -2px 0px black;
         }
         p{
             color: #000000;
             text-align: center;
-            font-size: 25px;
+            font-size: 20px;
             margin: 0 40px 30px 40px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 360px){
+
+    header{
+        h1{
+            font-size: 15px;
+        }
+        img{
+            max-height: 150px;
         }
     }
 }

@@ -8,30 +8,37 @@ import user from '../views/user.vue';
 const routes = [
   {
     path: '/', 
+    name: 'generator',
     component: generator
   },
   {
-    path: '/generator', 
+    path: '/generator',
+    name: 'generator',
     component: generator
   },
   {
     path: '/search', 
+    name: 'search',
     component: search
   },
   {
     path: '/login', 
+    name: 'login',
     component: login
   },
   {
     path: '/register', 
+    name: 'register',
     component: register
   },
   {
-    path: '/validation/:id/:token', 
+    path: '/validation/:id/:token',
+    name: 'validMail', 
     component: validMail
   },
   {
     path: '/user', 
+    name: 'user',
     component: user
   }
 ]

@@ -12,29 +12,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            #nav{
-                background-color: $colorPrimary;
-                height: 40px;
-                display: flex;
-                justify-content:center;
-                align-items: center;
-                border-radius: 0 0 10px 10px ;
-                border-bottom: 3px black solid;
-                border-left: 3px black solid;
-                border-right: 3px black solid;
-                .nav{
-                    height: 100%;
-                    padding: 0 20px;
-                    margin: 0 10px;
-                    font-family: 'Texturina', serif;
-                    font-weight: bolder;
-                    text-decoration: none;
-                    display: flex;
-                }
-                .nav:hover{
-                    text-decoration:underline;
-                }
-            }
+            
             .generator{
                 display: flex;
                 flex-direction: column;

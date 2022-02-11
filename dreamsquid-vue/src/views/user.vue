@@ -3,42 +3,37 @@
         
         <div class="ensemble-info">
 
-            <div class="info-nav">
-                
-                <ul>
+            <ul  class="info-nav">
 
-                    <li>
-                        <input type="radio" id="input-profil" value="0" v-model="calcul" >
-                        <label for="input-profil">profil</label>
-                    </li>
+                <li>
+                    <input type="radio" id="input-profil" value="0" v-model="calcul" >
+                    <label for="input-profil">profil</label>
+                </li>
 
-                    <li>
-                        <input type="radio" id="input-descri" value="1" v-model="calcul" >
-                        <label for="input-descri">mes descriptions</label>
-                    </li>
+                <li>
+                    <input type="radio" id="input-descri" value="1" v-model="calcul" >
+                    <label for="input-descri">mes descriptions</label>
+                </li>
 
-                    <li>
-                        <input type="radio" id="input-works" value="2" v-model="calcul" >
-                        <label for="input-works">mes oeuvres</label>
-                    </li>
+                <li>
+                    <input type="radio" id="input-works" value="2" v-model="calcul" >
+                    <label for="input-works">mes oeuvres</label>
+                </li>
 
-                </ul>
-            </div>
+            </ul>
 
-                <EcranProfil v-if="calcul == '0'" />
-                <EcranDescri v-if="calcul == '1'" />
-                <Ecran-works v-if="calcul == '2'" />
+            <EcranProfil v-if="calcul == '0'" />
+            <EcranDescri v-if="calcul == '1'" />
+            <Ecran-works v-if="calcul == '2'" />
 
         </div>
         
     </div>
-    <IconUser/>
 </template>
 
 <script>
     import { mapState } from 'vuex';
     import session from '../components/session.js';
-    import IconUser from '../components/icon-user.vue';
     import EcranProfil from '../components/ecran-user/profil.vue';
     import EcranDescri from '../components/ecran-user/descri.vue';
     import EcranWorks from '../components/ecran-user/works.vue';
@@ -48,7 +43,6 @@
         name: 'user',
 
         components: {
-            IconUser,
             EcranProfil,
             EcranDescri,
             EcranWorks,

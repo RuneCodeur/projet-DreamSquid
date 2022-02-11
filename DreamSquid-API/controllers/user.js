@@ -109,7 +109,7 @@ exports.login = (req, res) => {
             res.status(405).json({error: "cet utilisateur n'existe pas"});
           }
           else if(user[0]['date_validation'] == null){
-            res.status(405).json({error: "Cet utilisateur n'à pas encore validé son adresse email."});
+            res.status(405).json({error: "Cet utilisateur n'à pas encore validé son adresse E-mail."});
           }
           else{
             bcrypt.compare(req.query.mdp, user[0].mdp, function(err, result){

@@ -1,7 +1,6 @@
 <template>
   <div class="generator">
     <div id="themeGeneral">
-
         <p>Choix du thème</p>
 
         <ul id="theme">
@@ -34,7 +33,6 @@
     <PersonaCalcul v-if="calcul === '2'"/>
     <ChimeraCalcul v-if="calcul === '3'"/>
 
-    <Icon-User/>
   </div>
 </template>
 
@@ -44,7 +42,6 @@
   import RpgCalcul from '../components/RpgCalcul.vue';
   import PersonaCalcul from '../components/PersonaCalcul.vue';
   import ChimeraCalcul from '../components/ChimeraCalcul.vue';
-  import IconUser from '../components/icon-user.vue';
   import session from '../components/session.js';
 
   export default {
@@ -60,7 +57,6 @@
       RpgCalcul,
       ChimeraCalcul,
       PersonaCalcul,
-      IconUser,
     },
 
     data() {

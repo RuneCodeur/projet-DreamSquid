@@ -20,14 +20,16 @@
         width: 70%;
         max-width: 800px;
         min-height: 80px;
-        div{
+        p{
+            white-space: pre-line;
             font-size: 23px;
-            margin: 10px 0;
             color: $colorSecundary;
             display: flex;
             text-align: center;
             justify-content: center;
             align-items: center;
+            margin: 10px 0;
+            line-height: 27px
         }
     }
 }

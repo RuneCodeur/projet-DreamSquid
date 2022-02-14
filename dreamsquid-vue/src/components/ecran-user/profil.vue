@@ -1,7 +1,7 @@
 <template>
     <div id="profil">
         
-        <h2>Mon Profil</h2>
+        <h1>Mon Profil</h1>
         
         <div class="win" v-if="result == 1 ">
             <p> {{message}} </p>

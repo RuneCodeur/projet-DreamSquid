@@ -11,7 +11,8 @@ exports.getAuth= (req, res, next) => {
         }else{
             next();
         }
-    }catch{
+    }catch(e){
+        console.log(e)
         return res.status(401).json({error: "Requête non authentifiée !"});
     }
 };

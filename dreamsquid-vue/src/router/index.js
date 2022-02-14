@@ -5,10 +5,10 @@ import login from '../views/login.vue';
 import register from '../views/register.vue';
 import validMail from '../views/valid-mail.vue';
 import user from '../views/user.vue';
+import create from '../views/create.vue';
 const routes = [
   {
-    path: '/', 
-    name: 'generator',
+    path: '/',
     component: generator
   },
   {
@@ -40,6 +40,11 @@ const routes = [
     path: '/user', 
     name: 'user',
     component: user
+  },
+  {
+    path: '/create', 
+    name: 'create',
+    component: create
   }
 ]
 

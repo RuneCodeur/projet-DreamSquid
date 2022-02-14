@@ -2,68 +2,102 @@
     <div id="pokeGen">
         <p class="descriptionGen"> Clique sur le bouton, et le générateur te donnera la description d'un nouveau Pokémon complètement unique ! </p>
         
-        <div v-if="ValueBestiole === ''"  id="maBestiole"> Clique sur le bouton, si tu veux une description ! </div>
-        <div v-if="ValueBestiole != ''" id="maBestiole">{{ValueBestiole}}</div>
-        <div  v-if="ValuemonType != ''" class="deType">de type</div>
-        <div  v-if="ValuemonType != ''" id="monType">{{ValuemonType}}</div>
+        <div v-if="generatorDescription === ''" id="maBestiole"> Clique sur le bouton, si tu veux une description ! </div>
+        <div v-if="generatorDescription != ''" id="maBestiole">{{generatorDescription}}</div>
+        <div v-if="generatorType != ''" class="deType">de type</div>
+        <div v-if="generatorType != ''" id="monType">{{generatorType}}</div>
     </div>
-  <input id="random" type="button" value="Un autre !" @click="calcul()">    
+
+    <div class="win" v-if="win != '' ">
+      <p> {{win}} </p>
+    </div>
+
+    <div class="err" v-if="error != '' ">
+      <p> Erreur : {{error}} </p>
+    </div>
+
+  <div class="list-option" v-if=" this.tokenStore != '' && generatorDescription != ''">
+    <input class="button-option" type="button" value=" Sauvegarder cette description " @click="saveDescri()">
+    <router-link to="/create" class="button-option" >Enregistrer mon oeuvre </router-link>
+  </div>
+
+  <input id="random" type="button" value="Un autre !" @click="callDescri()">
 </template>
 
 <script>
+  import { mapState } from 'vuex';
+  import { HTTP } from '../http-constants';
+
 export default {
+
   data() {
+
     return{
-      ValuemonType: '',
-      ValueBestiole: '',
-      quality: '',
-      typeList: ["normale","Feu","combat","eau","vol","plante","Poison","Electrik","sol","Psy","Roche","glace","insecte","Dragon","spectre","ténèbre","acier","Fée"],
-      bestioleList: ["un dinosaure","un kangourou", "un elementaire", "un singe", "un guerrier", "un serpent", "un lézard", "un fauve", "un bovin", "un oiseau", "un poisson", "un objet", "un rongeur", "un molusque"],
-      qualityList: ["avec des gros bras", "avec un seul oeil", "qui aime la musique", "avec un attribut culinaire", "avec des cornes ou des pics partout", "trop mignon", "divin", "qui fait de la magie", "avec un gros visage", "en version gros balèze", "spectral", "un peu flippant", "un peu moche"],
+      generatorDescription: '',
+      generatorType:'',
+      win: '',
+      error:'',
     }
+
   },
+
+  computed:{
+    ... mapState(['tokenStore', 'idStore', 'pseudoStore']),
+  },
+
   methods: {
 
-    bonuschimery(){
-      let bestioleAleatoire = Math.floor(Math.random() * this.bestioleList.length);
-      let qualityAleatoire = Math.floor(Math.random() * this.qualityList.length);
-      let bestioleAleatoireBonus = Math.floor(Math.random() * this.bestioleList.length);
+    callDescri(){
+      this.error = ''
+      this.win = ''
+      if(this.tokenStore != ''){
+        HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
+        HTTP.get('/calculator/auth/pokemon', {params:{
+          id: this.idStore,
+          pseudo: this.pseudoStore
+          }
+        })
+        .then(response =>{
+          this.generatorDescription = response.data.description;
+          this.generatorType = response.data.type
+        })
+        .catch(err=>{
+          this.error = err.response.data.error;
+        })
+      }
 
-      if(bestioleAleatoireBonus !== bestioleAleatoire){
-        this.ValueBestiole = "un mix entre " + this.bestioleList[bestioleAleatoire] + " et " + this.bestioleList[bestioleAleatoireBonus] + " " + this.qualityList[qualityAleatoire] + ".";
-      }else if(bestioleAleatoireBonus == bestioleAleatoire){
-        this.bonuschimery();
+      else{
+        HTTP.get('/calculator/pokemon')
+        .then(response =>{
+          this.generatorDescription = response.data.description;
+          this.generatorType = response.data.type
+        })
+        .catch(err=>{
+          this.error = err.response.data.error;
+        })
       }
     },
 
-    calcul(){
-      let pokeAleatoire1 = Math.floor(Math.random() * this.typeList.length);
-      let pokeAleatoire2 = Math.floor(Math.random() * this.typeList.length);
-      let numberType = Math.floor(Math.random()*2);
-      let chimery = Math.floor(Math.random()*4);
-      
-      //la tronche de la bestiole
-      if( chimery == 0){
-        this.bonuschimery();
-          
-      }else{
-        let bestioleAleatoire = Math.floor(Math.random() * this.bestioleList.length);
-        let qualityAleatoire = Math.floor(Math.random() * this.qualityList.length);
-        this.ValueBestiole = this.bestioleList[bestioleAleatoire] + " " + this.qualityList[qualityAleatoire] + ".";
-      }
-
-      //le type
-      if( numberType == 1){
-        if(this.typeList[pokeAleatoire1] === this.typeList[pokeAleatoire2]){
-          this.ValuemonType = this.typeList[pokeAleatoire1];
-        }else{
-          this.ValuemonType = this.typeList[pokeAleatoire1] + ' et ' + this.typeList[pokeAleatoire2];
+    saveDescri(){
+      HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
+      HTTP.get('/calculator/save', {params:{
+        id: this.idStore,
+        pseudo: this.pseudoStore
         }
-      }else if(numberType === 0){
-        this.ValuemonType = this.typeList[pokeAleatoire1];
-      }
-    }
-  },
+      })
+      .then(response =>{
+        this.generatorDescription ='';
+        this.generatorType = '';
+        this.error = ''
+        this.win = response.data.message;
+      })
+      .catch(err=>{
+        this.win = ''
+        this.error = err.response.data.error;
+      })
+    },
+
+  }
 };
 
 </script>

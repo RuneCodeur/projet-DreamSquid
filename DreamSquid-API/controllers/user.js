@@ -63,7 +63,8 @@ exports.signup = (req, res, next) => {
       return res.status(405).json({error: "Caractères non autorisé."});
     }
   }
-  catch{
+  catch(e){
+    console.log(e)
     return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
   }
 };
@@ -93,8 +94,9 @@ exports.validmail = (req, res) => {
         }
     })
   }
-  catch{
-      return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
   }
 };
 
@@ -114,7 +116,6 @@ exports.login = (req, res) => {
           else{
             bcrypt.compare(req.query.mdp, user[0].mdp, function(err, result){
               if(result === true){
-  
                 res.status(200).json({
                   id: user[0].id,
                   pseudo: user[0].pseudo,
@@ -137,15 +138,17 @@ exports.login = (req, res) => {
     }else {
       return res.status(405).json({error: "Caractère non autorisé."});
     }
-  }catch{
-      return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
   }
 };
 exports.modifpseudo = (req, res) => {
   try{
     if((req.body.newPseudo && regex.test(req.body.newPseudo) === true) && (req.body.oldPseudo && regex.test(req.body.oldPseudo) === true)){
       connection.execute(
-        "SELECT id from users where pseudo = ? ;",
+        "SELECT id FROM users WHERE pseudo = ? ;",
         [req.body.newPseudo],
         function(err, response){
           if(response[0] == undefined){
@@ -169,8 +172,10 @@ exports.modifpseudo = (req, res) => {
     else{
       return res.status(405).json({error: "Non autorisé."});
     }
-  }catch{
-      return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
   }
 };
 
@@ -178,7 +183,7 @@ exports.modifmail = (req, res) => {
   try{
     if((req.body.newMail && mailRegex.test(req.body.newMail) === true) && (req.body.oldMail && mailRegex.test(req.body.oldMail) === true)){
       connection.execute(
-        "SELECT id from users where mail = ? ;",
+        "SELECT id FROM users WHERE mail = ? ;",
         [req.body.newMail],
         function(err, response){
           if(response[0] == undefined){
@@ -202,8 +207,10 @@ exports.modifmail = (req, res) => {
     else{
       return res.status(405).json({error: "Non autorisé."});
     }
-  }catch{
-      return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
   }
 };
 
@@ -212,7 +219,7 @@ exports.modifpassword = (req, res) => {
   try{
     if(req.body.password && regexMdp.test(req.body.password) === true){
       connection.execute(
-        "SELECT id from users where id = ? AND pseudo = ?;",
+        "SELECT id FROM users WHERE id = ? AND pseudo = ?;",
         [req.body.id, req.body.pseudo],
         function(err, response){
           if(response[0] != undefined){
@@ -240,8 +247,10 @@ exports.modifpassword = (req, res) => {
     else{
       return res.status(405).json({error: "Non autorisé."});
     }
-  }catch{
-      return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
   }
 };
 
@@ -254,7 +263,47 @@ exports.modifpicture = (req, res) => {
     else{
       return res.status(405).json({error: "Non autorisé."});
     }
-  }catch{
+  }
+  catch(e){
+    console.log(e)
       return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+};
+
+exports.mydescri = (req, res) => {
+  try{
+    if((req.query.pseudo && regex.test(req.query.pseudo) === true) && req.query.id ){
+      connection.execute(
+      "SELECT id FROM users WHERE id = ? AND pseudo = ?;",
+      [req.query.id, req.query.pseudo],
+      function(err, user){
+        if(user[0] != undefined){
+          connection.execute(
+            "SELECT description_registred, last_description FROM users WHERE id = ?;",
+            [req.query.id],
+            function(err, response){
+              if(err){
+                return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+              }
+              else{
+                res.status(200).json({
+                  descriptionRegistred: response[0].description_registred,
+                  lastDescription: response[0].last_description,
+                })
+              }
+          })
+        }
+        else{
+          return res.status(405).json({error: "Non autorisé."});
+        }
+      })
+    }
+    else{
+      return res.status(405).json({error: "Non autorisé."});
+    }
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
   }
 };

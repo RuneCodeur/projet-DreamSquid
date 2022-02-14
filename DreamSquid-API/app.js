@@ -7,6 +7,7 @@ const path = require('path');
 const connection = require('./connect');
 
 const userRoutes = require('./routes/user');
+const calculRoutes = require('./routes/calculator');
 
 const limiter = rateLimit({
   windowMs: 60 * 1000, 
@@ -43,6 +44,7 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 //routes
 app.use('/auth', userRoutes);
+app.use('/calculator', calculRoutes);
 
 module.exports = app;
 

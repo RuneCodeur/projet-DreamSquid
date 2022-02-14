@@ -21,7 +21,7 @@
     },
     
     created() {
-      session.PersistentSession(this);
+      session.ForSession(this);
     },
 
   }

@@ -75,7 +75,7 @@
                         this.win = true,
                     )
                     .catch(err => {
-                        this.error = err.response;
+                        this.error = err.response.data.error;
                     });
                 }
             },

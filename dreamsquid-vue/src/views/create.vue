@@ -53,7 +53,8 @@
       </ul>
     </div>
 
-    <input v-if="win == '' || onLoad " type="button" class="button" value="envoyer" @click="postPicture()">
+    <input v-if="win == '' && !onLoad " type="button" class="button" value="envoyer" @click="postPicture()">
+    <p v-if="onLoad"> Votre oeuvre est en cours d'envoie. Veuillez ne pas fermer cette page.</p>
 
   </div>
 </template>
@@ -128,18 +129,17 @@
           this.onLoad = true;
           HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
           HTTP.defaults.headers.common['pseudo'] = this.pseudoStore;
-            
-            const form = new FormData();
-            form.append("image", document.getElementById('picture').files[0], 'picture');
-            HTTP.post('/picture/newPicture', form)
-                .then(() =>{
-                  this.win = 'Félicitation ! votre oeuvre à été posté !';
-                })
-                .catch(err =>{
-                  this.error = err.response.data.error;
-                })
+          const form = new FormData();
+          form.append("image", document.getElementById('picture').files[0], 'picture');
+          HTTP.post('/picture/newPicture', form)
+          .then(() =>{
+            this.win = 'Félicitation ! votre oeuvre à été posté !';
+          })
+          .catch(err =>{
+            this.error = err.response.data.error;
+          })
         }
-      }
+      },
 
     },
 

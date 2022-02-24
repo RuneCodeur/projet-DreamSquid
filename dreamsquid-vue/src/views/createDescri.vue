@@ -53,7 +53,8 @@
       </ul>
     </div>
 
-    <input  v-if="win == '' || onLoad " type="button" class="button" value="envoyer" @click="postPicture()">
+    <input v-if="win == '' && !onLoad " type="button" class="button" value="envoyer" @click="postPicture()">
+    <p v-if="onLoad"> Votre oeuvre est en cours d'envoie. Veuillez ne pas fermer cette page.</p>
 
   </div>
 </template>
@@ -105,19 +106,19 @@
     methods: {
 
         checkMedia(){
-            let doc = document.getElementById('picture').files[0]
-            if((doc.type === 'image/png') || (doc.type === 'image/jpg') ||(doc.type === 'image/jpeg')){
-                this.error = ''
-                var mediaPreview = new FileReader();
-                mediaPreview.readAsDataURL(doc);
-                mediaPreview.onload = function(file){
-                    document.getElementById('preview').src = file.target.result;
-                }
-                this.selectPicture = true ;
+          let doc = document.getElementById('picture').files[0]
+          if((doc.type === 'image/png') || (doc.type === 'image/jpg') ||(doc.type === 'image/jpeg')){
+            this.error = ''
+            var mediaPreview = new FileReader();
+            mediaPreview.readAsDataURL(doc);
+            mediaPreview.onload = function(file){
+              document.getElementById('preview').src = file.target.result;
             }
-            else{
-                this.error = 'le fichier doit être au format .jpeg, .jpg ou .png.';
-            }
+            this.selectPicture = true ;
+          }
+          else{
+            this.error = 'le fichier doit être au format .jpeg, .jpg ou .png.';
+          }
         },
 
       postPicture(){
@@ -128,19 +129,18 @@
           this.onLoad = true;
           HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
           HTTP.defaults.headers.common['pseudo'] = this.pseudoStore;
-          HTTP.defaults.headers.common['iddescription'] = this.$route.params.idDescription;
-            
-            const form = new FormData();
-            form.append("image", document.getElementById('picture').files[0], 'picture');
-            HTTP.post('/picture/newPictureWithDescri', form)
-                .then(() =>{
-                  this.win = 'Félicitation ! votre oeuvre à été posté !';
-                })
-                .catch(err =>{
-                  this.error = err.response.data.error;
-                })
+          HTTP.defaults.headers.common['iddescription'] = this.$route.params.idDescription; 
+          const form = new FormData();
+          form.append("image", document.getElementById('picture').files[0], 'picture');
+          HTTP.post('/picture/newPictureWithDescri', form)
+          .then(() =>{
+            this.win = 'Félicitation ! votre oeuvre à été posté !';
+          })
+          .catch(err =>{
+            this.error = err.response.data.error;
+          })
         }
-      }
+      },
 
     },
 

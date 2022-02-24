@@ -41,7 +41,7 @@ exports.saveTheLast = (req, res) =>{
     try{
         connection.execute(
             "SELECT last_description, description_registred from users where id = ? AND pseudo = ?;",
-            [req.query.id, req.query.pseudo],
+            [req.body.id, req.body.pseudo],
             function(err, description){
             if(description[0] != undefined){
                 if(description[0]['last_description'] != null){
@@ -51,14 +51,16 @@ exports.saveTheLast = (req, res) =>{
                         newDescription.push(JSON.parse(description[0]['last_description']))
                     }
                     else{
+                        
+                        //if descriptionregistred >= 10, renvoie un nope
+
                         newDescription = JSON.parse(description[0]['description_registred'])
                         newDescription.push(JSON.parse(description[0]['last_description']))
                     }
                     newDescription = JSON.stringify(newDescription)
-
                     connection.execute(
                         "UPDATE users SET last_description = NULL, description_registred = ? WHERE id = ? AND pseudo = ?;",
-                        [newDescription, req.query.id, req.query.pseudo],
+                        [newDescription, req.body.id, req.body.pseudo],
                         function(err, response){
                         if(err){
                             console.log(err)

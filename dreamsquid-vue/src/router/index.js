@@ -6,6 +6,11 @@ import register from '../views/register.vue';
 import validMail from '../views/valid-mail.vue';
 import user from '../views/user.vue';
 import create from '../views/create.vue';
+import createDescription from '../views/createDescri.vue';
+import seePicture from '../views/seePicture.vue';
+import seeDescription from '../views/seeDescri.vue';
+
+
 const routes = [
   {
     path: '/',
@@ -45,7 +50,22 @@ const routes = [
     path: '/create', 
     name: 'create',
     component: create
-  }
+  },
+  {
+    path: '/picture/:idPicture', 
+    name: 'picture', 
+    component: seePicture
+ },
+ {
+  path: '/description/:idDescription', 
+  name: 'description', 
+  component: seeDescription
+},
+{
+  path: '/description/create/:idDescription', 
+  name: 'createDescription', 
+  component: createDescription
+},
 ]
 
 const router = createRouter({

@@ -148,7 +148,7 @@ exports.modifpseudo = (req, res) => {
   try{
     if((req.body.newPseudo && regex.test(req.body.newPseudo) === true) && (req.body.oldPseudo && regex.test(req.body.oldPseudo) === true)){
       connection.execute(
-        "SELECT id FROM users WHERE pseudo = ? ;",
+        "SELECT id FROM users WHERE pseudo = ?;",
         [req.body.newPseudo],
         function(err, response){
           if(response[0] == undefined){
@@ -183,7 +183,7 @@ exports.modifmail = (req, res) => {
   try{
     if((req.body.newMail && mailRegex.test(req.body.newMail) === true) && (req.body.oldMail && mailRegex.test(req.body.oldMail) === true)){
       connection.execute(
-        "SELECT id FROM users WHERE mail = ? ;",
+        "SELECT id FROM users WHERE mail = ?;",
         [req.body.newMail],
         function(err, response){
           if(response[0] == undefined){
@@ -292,6 +292,193 @@ exports.mydescri = (req, res) => {
                 })
               }
           })
+        }
+        else{
+          return res.status(405).json({error: "Non autorisé."});
+        }
+      })
+    }
+    else{
+      return res.status(405).json({error: "Non autorisé."});
+    }
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+};
+
+exports.numberdescri = (req, res) => {
+  try{
+    if((req.query.pseudo && regex.test(req.query.pseudo) === true) && req.query.id ){
+      connection.execute(
+      "SELECT id FROM users WHERE id = ? AND pseudo = ?;",
+      [req.query.id, req.query.pseudo],
+      function(err, user){
+        if(user[0] != undefined){
+          connection.execute(
+            "SELECT description_registred FROM users WHERE id = ?;",
+            [req.query.id],
+            function(err, response){
+              if(err){
+                return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+              }
+              else{
+                let number = JSON.parse(response[0].description_registred)
+                if(number != null){
+                  res.status(200).json({
+                    number: number.length,
+                  })
+                }
+                else{
+                  res.status(200).json({
+                  number: 0,
+                  })
+                }
+              }
+          })
+        }
+        else{
+          return res.status(405).json({error: "Non autorisé."});
+        }
+      })
+    }
+    else{
+      return res.status(405).json({error: "Non autorisé."});
+    }
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+};
+
+exports.selectdescri = (req, res) => {
+  try{
+    if((req.query.pseudo && regex.test(req.query.pseudo) === true) && req.query.id ){
+      connection.execute(
+      "SELECT id FROM users WHERE id = ? AND pseudo = ?;",
+      [req.query.id, req.query.pseudo],
+      function(err, user){
+        if(user[0] != undefined){
+          connection.execute(
+            "SELECT description_registred FROM users WHERE id = ?;",
+            [req.query.id],
+            function(err, response){
+              if(err){
+                return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+              }
+              else{
+                let description = JSON.parse(response[0].description_registred)
+                if(description == null){
+                  return res.status(405).json({error: "vous n'avez pas enregistré de description"});
+                }
+                else{
+                  description = description[req.query.position]
+                  if(description == null){
+                    return res.status(405).json({error: "La description selectionée n'existe pas"});
+                  }
+                  else{
+                    res.status(200).json({
+                      description: description,
+                    })
+                  }
+                }
+              }
+          })
+        }
+        else{
+          return res.status(405).json({error: "Non autorisé."});
+        }
+      })
+    }
+    else{
+      return res.status(405).json({error: "Non autorisé."});
+    }
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+};
+
+exports.lastdescri = (req, res) => {
+  try{
+    if((req.query.pseudo && regex.test(req.query.pseudo) === true) && req.query.id ){
+      connection.execute(
+      "SELECT id FROM users WHERE id = ? AND pseudo = ?;",
+      [req.query.id, req.query.pseudo],
+      function(err, user){
+        if(user[0] != undefined){
+          connection.execute(
+            "SELECT last_description FROM users WHERE id = ?;",
+            [req.query.id],
+            function(err, response){
+              if(err){
+                return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+              }
+              else{
+                res.status(200).json({
+                  lastDescription: response[0].last_description,
+                })
+              }
+          })
+        }
+        else{
+          return res.status(405).json({error: "Non autorisé."});
+        }
+      })
+    }
+    else{
+      return res.status(405).json({error: "Non autorisé."});
+    }
+  }
+  catch(e){
+    console.log(e)
+    return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+  }
+};
+
+exports.deletedescri = (req, res) => {
+  try{
+    if((req.query.pseudo && regex.test(req.query.pseudo) === true) && req.query.id ){
+      connection.execute(
+      "SELECT id FROM users WHERE id = ? AND pseudo = ?;",
+      [req.query.id, req.query.pseudo],
+      function(err, user){
+        if(user[0] != undefined){
+          connection.execute(
+            "SELECT description_registred FROM users WHERE id = ?;",
+            [req.query.id],
+            function(err, response){
+              if(err){
+                return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+              }
+              else{
+                let description = JSON.parse(response[0].description_registred)
+                if(description == null){
+                  return res.status(405).json({error: "vous n'avez pas enregistré de description"});
+                }
+                else if (description[req.query.position] == null){
+                  return res.status(405).json({error: "La description selectionée n'existe pas"});
+                }
+                else{
+                  description.splice(req.query.position, 1)
+                  description = JSON.stringify(description)
+                  connection.execute(
+                    "UPDATE users SET description_registred = ? WHERE id = ? AND pseudo = ?;",
+                    [description, req.query.id, req.query.pseudo],
+                    function(err, result){
+                      if(err){
+                        return res.status(500).json({error: "le serveur à rencontré un problème. veuillez réessayer plus tard."});
+                      }
+                      else{
+                        res.status(200).json({message: "La Description à été supprimée !"});
+                      }
+                  })
+                }
+              }
+            })
         }
         else{
           return res.status(405).json({error: "Non autorisé."});

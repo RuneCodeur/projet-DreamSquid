@@ -10,9 +10,8 @@
   </header>
 
   <div id="nav">
-    
     <router-link to="/generator" class="nav">Générateur</router-link>
-    <router-link to="/search" class="nav">Rechercher</router-link>
+    <router-link to="/search" class="nav">Oeuvres</router-link>
   </div>
 
   <router-view/>

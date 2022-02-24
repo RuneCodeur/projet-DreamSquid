@@ -1,0 +1,28 @@
+#seePicture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    .ensemble-picture{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        .title{
+            text-align: center;
+            font-size: 40px;
+            margin: 30px;
+        }
+        p{
+            text-align: center;
+            margin: 0;
+        }
+        img{
+            width: 80%;
+            margin: 20px;
+        }
+
+        }
+}

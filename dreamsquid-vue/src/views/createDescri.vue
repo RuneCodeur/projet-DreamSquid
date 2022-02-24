@@ -6,8 +6,8 @@
     </div>
 
     <div class="win" v-if="win != '' ">
-      <p> {{win}} </p>
-    </div>
+            <p> {{win}} </p>
+        </div>
 
     <div class="img-preview" v-if="win == '' ">
       <img id="preview" alt="Mon oeuvre" style="max-height:500px;" v-if="selectPicture ">
@@ -16,44 +16,44 @@
     </div>
 
     <div class="bloc-description" v-if="win == '' ">
-      <p class="description">{{lastDescription.description}}</p>
-      <div class="type" v-if="lastDescription.type">
+      <p class="description">{{description.description}}</p>
+      <div class="type" v-if="description.type">
         <h2> de type : </h2>
-        <p>{{lastDescription.type}}</p>
+        <p>{{description.type}}</p>
       </div>
-      <div class="align" v-if="lastDescription.alignement">
+      <div class="align" v-if="description.alignement">
         <h2>alignement : </h2>
-        <p>{{lastDescription.alignement}}</p>
+        <p>{{description.alignement}}</p>
       </div>
-      <ul class="stats" v-if="lastDescription.stats">
+      <ul class="stats" v-if="description.stats">
         <li>
           <h2>Force</h2>
-          <p>{{lastDescription.stats.fo}}</p>
+          <p>{{description.stats.fo}}</p>
         </li>
         <li>
           <h2>Dexterité</h2>
-          <p>{{lastDescription.stats.dex}}</p>
+          <p>{{description.stats.dex}}</p>
         </li>
         <li>
           <h2>Constitution</h2>
-          <p>{{lastDescription.stats.co}}</p>
+          <p>{{description.stats.co}}</p>
         </li>
         <li>
           <h2>Intelligence</h2>
-          <p>{{lastDescription.stats.int}}</p>
+          <p>{{description.stats.int}}</p>
         </li>
         <li>
           <h2>Sagesse</h2>
-          <p>{{lastDescription.stats.sag}}</p>
+          <p>{{description.stats.sag}}</p>
         </li>
         <li>
           <h2>Charisme</h2>
-          <p>{{lastDescription.stats.cha}}</p>
+          <p>{{description.stats.cha}}</p>
         </li>
       </ul>
     </div>
 
-    <input v-if="win == '' || onLoad " type="button" class="button" value="envoyer" @click="postPicture()">
+    <input  v-if="win == '' || onLoad " type="button" class="button" value="envoyer" @click="postPicture()">
 
   </div>
 </template>
@@ -72,7 +72,7 @@
     
     data() {
       return {
-        lastDescription: '',
+        description: '',
         picture:'',
         selectPicture: false,
         onLoad: false,
@@ -87,40 +87,40 @@
     
     created() {
       session.ForSession(this);
-      HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
-      HTTP.get('/auth/lastDescri',{params:{
-        id: this.idStore,
-        pseudo: this.pseudoStore
-        }
-      })
-      .then(response =>{
-        this.lastDescription = JSON.parse(response.data.lastDescription)        
-      })
-      .catch(err=>{
-        console.log(err)
-      })
+        HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
+        HTTP.get('/auth/selectDescri',{params:{
+            id: this.idStore,
+            pseudo: this.pseudoStore,
+            position: this.$route.params.idDescription
+            }
+        })
+        .then(response =>{
+            this.description = response.data.description
+        })
+        .catch(err=>{
+            this.error = err.response.data.error;
+        })
     },
 
     methods: {
 
-      checkMedia(){
-        let doc = document.getElementById('picture').files[0]
-        if((doc.type === 'image/png') || (doc.type === 'image/jpg') ||(doc.type === 'image/jpeg')){
-          this.error = ''
-          var mediaPreview = new FileReader();
-          mediaPreview.readAsDataURL(doc);
-          mediaPreview.onload = function(file){
-            document.getElementById('preview').src = file.target.result;
-          }
-          this.selectPicture = true ;
-        }
-        else{
-          this.error = 'le fichier doit être au format .jpeg, .jpg ou .png.';
-        }
-      },
+        checkMedia(){
+            let doc = document.getElementById('picture').files[0]
+            if((doc.type === 'image/png') || (doc.type === 'image/jpg') ||(doc.type === 'image/jpeg')){
+                this.error = ''
+                var mediaPreview = new FileReader();
+                mediaPreview.readAsDataURL(doc);
+                mediaPreview.onload = function(file){
+                    document.getElementById('preview').src = file.target.result;
+                }
+                this.selectPicture = true ;
+            }
+            else{
+                this.error = 'le fichier doit être au format .jpeg, .jpg ou .png.';
+            }
+        },
 
       postPicture(){
-        
         if(this.selectPicture !==  true){
           this.error = 'Aucune oeuvre n\'a été séléctionné.';
         }
@@ -128,10 +128,11 @@
           this.onLoad = true;
           HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
           HTTP.defaults.headers.common['pseudo'] = this.pseudoStore;
+          HTTP.defaults.headers.common['iddescription'] = this.$route.params.idDescription;
             
             const form = new FormData();
             form.append("image", document.getElementById('picture').files[0], 'picture');
-            HTTP.post('/picture/newPicture', form)
+            HTTP.post('/picture/newPictureWithDescri', form)
                 .then(() =>{
                   this.win = 'Félicitation ! votre oeuvre à été posté !';
                 })

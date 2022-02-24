@@ -13,5 +13,9 @@ router.put('/modifyMail', auth.getAuth , userCtrl.modifmail);
 router.put('/modifyPassword', auth.getAuth , userCtrl.modifpassword);
 router.put('/modifyPicture', auth.getAuth , userCtrl.modifpicture);
 router.get('/myDescri', auth.getAuth , userCtrl.mydescri);
+router.get('/numberDescri', auth.getAuth , userCtrl.numberdescri);
+router.get('/selectDescri', auth.getAuth , userCtrl.selectdescri);
+router.get('/lastDescri', auth.getAuth , userCtrl.lastdescri);
+router.delete('/descri', auth.getAuth , userCtrl.deletedescri);
 
 module.exports = router;

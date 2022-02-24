@@ -1,0 +1,94 @@
+#search{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    ul{
+        padding: 50px 20px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        li{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            .bloc-work{
+                background-color:$colortertiary;
+                border-radius: 10px;
+                margin: 10px;
+                padding: 10px;
+                width: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                img{
+                    max-width: 500px;
+                    max-height: 500px;
+                    object-fit: contain;
+                }
+                p{
+                    margin: 10px;
+                    max-width: 500px;
+                    word-wrap: break-word;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px){
+
+    #search{
+        .bloc-work{
+            width: 400px !important;
+            img{
+                max-width: 400px !important;
+                max-height: 400px !important;
+            }
+            p{
+                max-width: 400px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 475px){
+
+    #search{
+        .bloc-work{
+            width: 300px !important;
+            img{
+                max-width: 300px !important;
+                max-height: 300px !important;
+            }
+            p{
+                max-width: 300px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px){
+
+    #search{
+        .bloc-work{
+            width: 250px !important;
+            img{
+                max-width: 250px !important;
+                max-height: 250px !important;
+            }
+            p{
+                max-width: 250px !important;
+            }
+        }
+    }
+}
+

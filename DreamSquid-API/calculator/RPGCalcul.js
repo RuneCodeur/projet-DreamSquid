@@ -357,6 +357,7 @@ exports.description = (req, res, next) => {
 
         //RENVOIE LE BAZAR
         res.locals.result = {
+            name:'RPG',
             description : descri,
             alignement : alignement,
             stats : {

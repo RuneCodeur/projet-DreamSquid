@@ -181,6 +181,7 @@ exports.description = (req, res, next) => {
 
         //RENVOIE LE BAZAR
         res.locals.result = {
+            name:'persona',
             description : descri,
         }
         return next()

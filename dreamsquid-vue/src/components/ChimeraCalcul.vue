@@ -17,7 +17,7 @@
   </div>
 
   <div class="list-option" v-if=" this.tokenStore != '' && generatorDescription != ''">
-    <input class="button-option" type="button" value=" Sauvegarder cette description " @click="saveDescri()">
+    <input class="button-option" type="button" :value=" 'Sauvegarder la description (' + this.number + '/10)'" v-if="number < 10" @click="saveDescri()">
     <router-link to="/create" class="button-option" >Enregistrer mon oeuvre </router-link>
   </div>
 
@@ -36,12 +36,30 @@
         generatorDescription: '',
         win: '',
         error:'',
+        number:'',
       }
 
     },
 
     computed:{
       ... mapState(['tokenStore', 'idStore', 'pseudoStore']),
+    },
+
+    created() {
+      if(this.tokenStore != ''){
+        HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
+        HTTP.get('/auth/numberDescri', {params:{
+          id: this.idStore,
+          pseudo: this.pseudoStore
+          }
+        })
+        .then(response =>{
+          this.number = response.data.number;
+        })
+        .catch(err=>{
+          this.error = err.response.data.error;
+        })
+      }
     },
 
     methods: {
@@ -77,12 +95,12 @@
 
       saveDescri(){
         HTTP.defaults.headers.common['Authorization'] = `bearer ${this.tokenStore}`;
-        HTTP.get('/calculator/save', {params:{
+        HTTP.put('/calculator/save', {
           id: this.idStore,
           pseudo: this.pseudoStore
-          }
         })
         .then(response =>{
+          this.number = this.number+1
           this.generatorDescription ='';
           this.generatorType = '';
           this.error = ''

@@ -47,6 +47,7 @@ exports.description = (req, res, next) => {
 
         //RENVOIE LE BAZAR
         res.locals.result = {
+            name:'pokemon',
             description : descri,
             type: type,
         }

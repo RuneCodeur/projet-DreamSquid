@@ -589,6 +589,7 @@ exports.description = (req, res, next) => {
         
         //RENVOIE LE BAZAR
         res.locals.result = {
+            name: 'chimera',
             description : descri
         }
         return next()

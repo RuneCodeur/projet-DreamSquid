@@ -1,0 +1,177 @@
+#home{
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 10px;
+    background-color: rgba($colortertiary, 0.3);
+    margin-top: 25px;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        margin: 0 10px;
+        h2, p{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        h2{
+            font-size: 2rem;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .middle-title{
+            display: flex;
+            align-items: center;
+            border-bottom: 3px black solid;
+            width: 100%;
+            margin: 20px 0;
+            h3{
+                background-color: $colorPrimary;
+                border-left: 3px black solid;
+                border-top: 3px black solid;
+                border-right: 3px black solid;
+                border-radius: 20px 20px 0 0;
+                display: flex;
+                font-size: 1.5rem;
+                text-align: center;
+                padding: 5px 15px;
+                margin: 0;
+
+            }
+        }
+        p{
+            margin: 10px 0;
+        }
+    }
+    .title{
+        font-size: 2rem;
+        margin: 25px 0;
+        text-decoration: underline;
+    }
+
+    .picture{
+        width: 40%;
+        height: 100%;
+        img{
+            width: 100%;
+            min-width: 200px;
+        }
+    }
+    .double-picture{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        .gene-descri{
+            min-width: 90%;
+            max-width: 90%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            p{
+                text-align: center;
+                background-color: $colortertiary;
+                margin: 0;
+                padding: 5px;
+            }
+            .descri-top{
+                color: $colorSecundary;
+                padding: 5px 10px;
+                border-radius: 15px 15px 5px 5px;
+                border: 3px black solid;
+            }
+            .descri-middle{
+                background-color: $colorquatuary;
+                border-left: 3px black solid;
+                border-right: 3px black solid;
+            }
+            .descri-bottom{
+                border: 3px black solid;
+                border-radius: 5px 5px 15px 15px;
+                color: $colorSecundary;
+                padding: 5px 10px;
+                
+            }
+        }
+        img{
+            object-fit:contain;
+            width: 50%;
+            min-width: 100px;
+        }
+    }
+
+    .descri{
+        max-width: 60%;
+        padding: 5px 30px;
+        ol{
+            margin: 0;
+        li{
+            margin: 10px 0;
+        }
+            
+        }
+    }
+
+    .pict{
+        margin: 50px 20px;
+        flex-direction: row;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .pict-g{
+        p{
+            justify-content: left;
+            text-align: start;
+        }
+    }
+    .pict-d{
+        p{
+            justify-content: right;
+            text-align: end;
+        }
+    }
+
+    .fonc{
+        justify-content: center;
+        padding: 0 10%;
+        align-items: center;
+        ul{
+            max-width: 475px;
+            margin: 0;
+            li{
+                padding: 5px 0;
+            }
+        }
+    }
+}
+
+//750px
+@media screen and (max-width: 750px){
+    #home{
+        .pict{
+            margin: 20px 20px;
+            .descri{
+                max-width: 80%;
+                p{
+                    justify-content: flex-start;
+                    text-align: start;
+                }
+            }
+        }
+        .pict-g{
+            flex-direction: column;
+        }
+        .pict-d{
+            flex-direction: column-reverse;
+        }
+        .picture, .double-picture{
+            width: 70%;
+            margin: 20px;
+        }
+    }
+}

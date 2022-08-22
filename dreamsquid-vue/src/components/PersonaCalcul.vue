@@ -21,7 +21,7 @@
     <router-link to="/create" class="button-option" >Enregistrer mon oeuvre </router-link>
   </div>
 
-  <input id="random" type="button" value="Un autre !" @click="callDescri()">
+  <input id="random" type="button" value="Générer" @click="callDescri()">
 </template>
 
 <script>

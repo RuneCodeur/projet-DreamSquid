@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import generator from '../views/generator.vue';
+import home from '../views/home.vue';
 import search from '../views/search.vue';
 import login from '../views/login.vue';
 import register from '../views/register.vue';
@@ -14,7 +15,7 @@ import seeDescription from '../views/seeDescri.vue';
 const routes = [
   {
     path: '/',
-    component: generator
+    component: home
   },
   {
     path: '/generator',

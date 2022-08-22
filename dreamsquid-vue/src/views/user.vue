@@ -27,7 +27,7 @@
             <Ecran-works v-if="calcul == '2'" />
 
         </div>
-        
+         
     </div>
 </template>
 

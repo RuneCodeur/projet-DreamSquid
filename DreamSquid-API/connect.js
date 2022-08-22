@@ -2,8 +2,8 @@ const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
     host:"mysql-dreamsquid.alwaysdata.net",
-    user:"254902",
-    password:"oblivion-666",
+    user:"277274",
+    password:"Oblivion-666",
     database:"dreamsquid_rackham",
 });
 

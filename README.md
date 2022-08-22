@@ -1,4 +1,4 @@
-version : 1.4.1
+version : 2.0.1
 concept : DreamSquid est un générateur de texte aléatoire à destination des artistes/illustrateurs/scénaristes de tout niveau.
 
 le projet est construit avec les languages HTML, SASS, Javascript et vue.js. 

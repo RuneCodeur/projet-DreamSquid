@@ -5,11 +5,12 @@
     <div class="bkgd-header">
       <img src="./assets/logo-dreamsquid.svg" alt="logo DreamSquid">
       <h1>DreamSquid</h1>
-      <p>un générateur de description aléatoire, pour dessiner à partir d'un texte !</p>
+      <p>Pour dessiner à partir d'un texte aléatoire !</p>
     </div>
   </header>
 
   <div id="nav">
+    <router-link to="/" class="nav">Accueil</router-link>
     <router-link to="/generator" class="nav">Générateur</router-link>
     <router-link to="/search" class="nav">Oeuvres</router-link>
   </div>

@@ -21,7 +21,7 @@
     <router-link to="/create" class="button-option" >Enregistrer mon oeuvre </router-link>
   </div>
 
-  <input id="random" type="button" value="Un autre !" @click="callDescri()">
+  <input id="random" type="button" value="Générer" @click="callDescri()">
 </template>
 
 <script>
@@ -87,10 +87,12 @@ export default {
       else{
         HTTP.get('/calculator/pokemon')
         .then(response =>{
+          //console.log(response)
           this.generatorDescription = response.data.description;
           this.generatorType = response.data.type
         })
         .catch(err=>{
+          //console.log(err)
           this.error = err.response.data.error;
         })
       }
